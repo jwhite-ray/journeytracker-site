@@ -13,50 +13,96 @@
     <nav>
       <a href="support.html">Support</a>
       <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
     </nav>
   </header>
 
   <h1>Privacy Policy</h1>
-  <p class="meta">Last updated: July 28, 2026</p>
+  <p class="meta">Last updated: August 3, 2026</p>
 
   <div class="lede">
     <span class="label">The short version</span>
-    JourneyTracker has no accounts, no servers, and no analytics. Your data stays on your device.
+    JourneyTracker works with no account and no internet. If you sign in, we keep a private backup of your journeys so they survive a new phone. Showing anything to other people is a separate choice, made in Settings under Sharing, and it starts switched off.
   </div>
 
   <section>
     <h2>Health data</h2>
-    <p>With your permission, the app reads walking + running distance (moves your marker) and step count (extra stat only) from Apple Health. Read-only — never writes, never shares. Processed and stored entirely on your device. You can change access in the Health app under Sharing, or Settings &gt; Privacy &amp; Security &gt; Health.</p>
+    <p>With your permission, the app reads two things from Apple Health: walking + running distance, which moves your marker, and step count, which is shown as an extra stat and never affects your progress. Read-only — we never write to Health. Your step count never leaves this device. Your walking distance is used on this device to work out how far along each journey you are; if you sign in, that journey distance is copied to our server as part of your backup, and if you turn on sharing in Settings, it becomes visible to other people in the app. We never use it for advertising or marketing, never mine it, and never sell it or give it to anyone else. You can change access any time in the Health app under Sharing, or Settings &gt; Privacy &amp; Security &gt; Health.</p>
   </section>
 
   <section>
-    <h2>What the app stores</h2>
-    <p>Journeys, progress, and reached waypoints in a private on-device database. Nothing is uploaded.</p>
+    <h2>If you don't sign in</h2>
+    <p>Nothing leaves your device. No account is created, we hold no rows about you, and every part of the app works. The trade-off is that your journeys live only on this phone — if you delete the app or lose the phone, they're gone.</p>
   </section>
 
   <section>
-    <h2>Notifications</h2>
-    <p>If allowed, notifications are scheduled locally (e.g., reaching a waypoint). No push server.</p>
+    <h2>Your account</h2>
+    <p>Accounts use Sign in with Apple. We store the account identifier Apple gives us — that's your identity here. We do not store your email address. Apple passes us your name once, the first time you sign in; we use it to fill in your display name, which you can change to anything you like. We also generate a friend code for you, and store which age group you're in.</p>
   </section>
 
   <section>
-    <h2>What we don't do</h2>
-    <p>No accounts, analytics, ads, third parties; no data leaves your device.</p>
+    <h2>Backup — private, and what signing in is for</h2>
+    <p>Signing in turns on backup. For each journey you've started we store: which journey it is, the day you started, whether it's active, paused or finished, and how far you've walked. It exists for one reason — so your journeys come back after a reinstall or on a new phone. It is private to your account and is never shown to anyone. It is not a leaderboard, it isn't visible to friends, and turning sharing off doesn't remove it.</p>
+  </section>
+
+  <section>
+    <h2>Sharing — separate, opt-in, and set in Settings</h2>
+    <p>Sharing is a different thing, with its own controls, off by default. Settings &gt; Sharing has two switches — Journeys &amp; progress and Trophy case — and each can be set to Everyone, Friends, or Not shared. Both start at Not shared. They apply to your whole account: there is no per-journey switch, and we never interrupt you to ask when you start a journey. With Journeys &amp; progress set to Everyone or Friends, we store your journeys' progress in a form other people in the app can see, alongside your display name, we may show how long a finished journey took, and we count the distance you walk from that point on toward weekly and monthly totals. Everyone means public leaderboards as well as friends; Friends means only people you've added, and never a public leaderboard. With Trophy case on, the trophies you've earned are stored so other people can look at them. Setting either back to Not shared deletes what that switch had shared — all of it, for every journey. Distance already counted toward a weekly or monthly total stays counted; we don't record which journey each mile came from, so we can't remove it individually. Your private backup is unaffected either way. Your display name is shown wherever you are visible and cannot be hidden separately.</p>
+  </section>
+
+  <section>
+    <h2>Friends and moderation</h2>
+    <p>Adding a friend creates a record of that connection: who you're friends with, and who has a request waiting with you. Friends see your display name, the avatar you choose, and — only if you've turned sharing on — your progress on journeys you have in common. We also store the accounts you block and any report you file, including the reason you pick and anything you type into it. A block is one-sided in our database and mutual in effect: the person you blocked is never told, and neither of you sees the other again. Reports are read by a person, who reviews every one within 24 hours and can force a rename or suspend an account. If you delete your account, your friendships, your blocks and your friend code are erased with everything else — reports are the one exception, and they're kept for 24 months at most: in a report you filed, your name is simply removed; in a report that named you, your identity is replaced by a one-way hash and nothing else, so deleting an account can't erase a pattern of abuse. Questions about moderation, or a report you'd rather send directly: <a href="mailto:journeytrackerapplication@gmail.com">journeytrackerapplication@gmail.com</a>.</p>
+  </section>
+
+  <section>
+    <h2>Your age</h2>
+    <p>When you make an account we ask for your birth month and year. We use it once to work out your age group, store the group, and discard the month and year. We never store your date of birth. Accounts require you to be 13 or older, or 16 or older in the EU, EEA and UK.</p>
+  </section>
+
+  <section>
+    <h2>Where your data is stored</h2>
+    <p>On servers we operate through Supabase, in the United States. Data is encrypted in transit and at rest. Your rows are readable only by you; that's enforced by the database itself, not just by the app.</p>
+  </section>
+
+  <section>
+    <h2>How long we keep it</h2>
+    <p>As long as your account exists. Delete your account and everything above is erased immediately — no grace period, no soft delete. The one exception: if someone reports your account for abuse, we keep that report for 24 months with your identity replaced by a one-way hash and nothing else attached, so that deleting an account can't erase a pattern of abuse. It cannot be turned back into your identity.</p>
   </section>
 
   <section>
     <h2>Deleting your data</h2>
-    <p>Delete the app and everything goes with it. Your Apple Health data is unaffected.</p>
+    <p>Three levers, and they do different things. Set a Sharing switch to Not shared — removes everything that switch had shared, across every journey, and keeps your backup. Delete your account in Settings — erases everything on our server immediately and permanently, and leaves everything on this phone alone. Delete the app — removes everything on this phone, and leaves your account untouched. Your Apple Health data is never affected by any of them.</p>
+  </section>
+
+  <section>
+    <h2>Getting a copy of your data</h2>
+    <p>Settings &gt; Export My Data gives you everything we hold about you as a file you can save or send anywhere. It's a short file; we hold very little.</p>
+  </section>
+
+  <section>
+    <h2>Notifications</h2>
+    <p>Scheduled locally on your device — reaching a waypoint, finishing a journey. Nothing is sent from a server, and we don't hold a push token.</p>
+  </section>
+
+  <section>
+    <h2>What we don't do</h2>
+    <p>No ads. No analytics or tracking SDKs. No third-party trackers. No selling or sharing your data with anyone. We don't collect your location — journeys are virtual, and the app never asks for it. We read nothing from Health except walking + running distance and step count, and we never write to Health.</p>
+  </section>
+
+  <section>
+    <h2>Children</h2>
+    <p>JourneyTracker accounts are for people 13 and over, or 16 and over in the EU, EEA and UK. If you are under that age the app still works fully — there's just no account and no social features.</p>
   </section>
 
   <section>
     <h2>Changes</h2>
-    <p>If a future version changes data handling (e.g., optional iCloud sync), this policy updates first.</p>
+    <p>If a future version changes how your data is handled, this policy is updated first. Your Sharing settings are forward-looking: when friends and leaderboards arrive, we'll apply the choice you've already made rather than asking again. If we ever want to do something your setting doesn't already describe, we'll ask you before we do it.</p>
   </section>
 
   <section>
     <h2>Contact</h2>
-    <p>Questions about this policy? See the <a href="index.html">support page</a>.</p>
+    <p>Questions, or a request about your data: <a href="mailto:journeytrackerapplication@gmail.com">journeytrackerapplication@gmail.com</a>.</p>
   </section>
 
   <footer class="site">
