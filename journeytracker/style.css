@@ -96,6 +96,50 @@ h1 {
 
 section { margin-bottom: 2rem; }
 
+.hero { margin-bottom: 1.5rem; }
+
+.hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.tagline {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  max-width: 34em;
+  margin-bottom: 1.25rem;
+}
+
+.badge-line { margin-bottom: 0; }
+
+.badge {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+}
+
+svg.route {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 2.5rem;
+}
+
+.features .feature { margin-bottom: 1.75rem; }
+.features .feature:last-child { margin-bottom: 0; }
+.features { margin-bottom: 2.75rem; }
+
+h3 {
+  font-size: 1.02rem;
+  margin: 1.1rem 0 0.35rem;
+}
+
 h2 {
   font-size: 1.2rem;
   letter-spacing: -0.01em;

@@ -3,39 +3,88 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JourneyTracker — Support</title>
-<link rel="stylesheet" href="style.css">
+<title>W Jamm</title>
+<meta name="description" content="W Jamm — an independent software company. Makers of JourneyTracker.">
+<style>
+:root {
+  --bg: #faf8f4;
+  --ink: #2b2620;
+  --ink-soft: #6b6257;
+  --accent: #3d6b4f;
+  --rule: #e5dfd5;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #191713;
+    --ink: #ece7de;
+    --ink-soft: #a89e90;
+    --accent: #8fbf9f;
+    --rule: #37322a;
+  }
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main {
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+.wordmark {
+  font-family: "New York", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  font-size: clamp(3.5rem, 14vw, 7rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.05;
+}
+.wordmark .w { color: var(--accent); }
+.underline {
+  width: 4.5rem;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+  margin: 1.4rem auto 1.6rem;
+}
+.sub {
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  margin-bottom: 2.75rem;
+}
+.works a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.55rem 1.3rem;
+  transition: border-color 0.15s ease;
+}
+.works a:hover { border-color: var(--accent); }
+footer {
+  position: fixed;
+  left: 0; right: 0; bottom: 1.4rem;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+</style>
 </head>
 <body>
-<div class="wrap">
-  <header class="site">
-    <a class="brand" href="index.html">JourneyTracker</a>
-    <nav>
-      <a href="index.html">Support</a>
-      <a href="privacy.html">Privacy</a>
-    </nav>
-  </header>
-
-  <h1>JourneyTracker</h1>
-  <p class="meta">Real walking, real journeys.</p>
-
-  <section>
-    <p>JourneyTracker turns the walking you already do into progress along real-world and original fantasy journeys. Your walking and running distance — read from Apple Health with your permission — moves your marker along the route, past waypoints, all the way to the end.</p>
-  </section>
-
-  <section>
-    <h2>Support</h2>
-    <p>Questions, problems, or feedback? Email <a href="mailto:journeytrackerapplication@gmail.com">journeytrackerapplication@gmail.com</a> and we'll get back to you as soon as we can.</p>
-  </section>
-
-  <section>
-    <h2>Your privacy</h2>
-    <p>JourneyTracker has no accounts, no servers, and no analytics — your data stays on your device. Read the full <a href="privacy.html">privacy policy</a>.</p>
-  </section>
-
-  <footer class="site">
-    JourneyTracker — real walking, real journeys.
-  </footer>
-</div>
+<main>
+  <h1 class="wordmark"><span class="w">W</span> Jamm</h1>
+  <div class="underline"></div>
+  <p class="sub">An independent software company.</p>
+  <p class="works"><a href="journeytracker/">JourneyTracker&nbsp;→</a></p>
+</main>
+<footer>W Jamm · Utah, USA</footer>
 </body>
 </html>
