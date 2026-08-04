@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["CXLF8773E4.com.justinwhitehead.JourneyTracker"],
+        "components": [
+          { "/": "/i/*", "comment": "KAN-108 friend-invite links" }
+        ]
+      }
+    ]
+  }
+}
