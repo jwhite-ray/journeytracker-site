@@ -1153,6 +1153,22 @@
  },
  {
   "slug": "mormon-trail",
+  "order": 8,
+  "waypoint": "Platte River Forks",
+  "file": "mormon-trail/08-v1.jpg",
+  "sourcePage": "https://commons.wikimedia.org/wiki/File:Alfred_Jacob_Miller_-_Crossing_to_the_North_Fork_of_the_Platte_-_Walters_3719408.jpg",
+  "license": "PD (artist d. 1874)",
+  "credit": "Alfred Jacob Miller, 1858–60 (Walters Art Museum)",
+  "learnMoreURL": "https://en.wikipedia.org/wiki/North_Platte_River",
+  "outputPx": "1170x1560",
+  "originalPx": "1491x1800",
+  "cropNote": "Period art of the same crossing region — an 1837 fur-trade caravan, NOT Mormon emigration; accepted at gate under the Oregon Miller precedent, credited honestly.",
+  "jpegQuality": 85,
+  "bytes": 246066,
+  "status": "staged"
+ },
+ {
+  "slug": "mormon-trail",
   "order": 9,
   "waypoint": "Ancient Bluff Ruins",
   "file": "mormon-trail/09-v1.jpg",
@@ -1213,6 +1229,22 @@
   "cropNote": "Standard center 3:4 crop.",
   "jpegQuality": 85,
   "bytes": 240636,
+  "status": "staged"
+ },
+ {
+  "slug": "mormon-trail",
+  "order": 14,
+  "waypoint": "Martin's Cove",
+  "file": "mormon-trail/14-v1.jpg",
+  "sourcePage": "https://commons.wikimedia.org/wiki/File:B-8._Martin's_Cove_(west_of_Devil's_Gate)_on_the_California,_Mormon_Pioneer,_and_Oregon_National_Historic_Trails_(2004)_(ffe5f94f-4ae4-4b7e-a0a4-b3a81fd9981c).JPG",
+  "license": "PD (US Government work)",
+  "credit": "Photo: NPS",
+  "learnMoreURL": "https://en.wikipedia.org/wiki/Martin%27s_Cove",
+  "outputPx": "1170x1560",
+  "originalPx": "2560x1704",
+  "cropNote": "The real cove, kept by explicit gate ruling (authenticity of place); quiet empty landscape suits the copy's restraint. Center crop.",
+  "jpegQuality": 80,
+  "bytes": 322081,
   "status": "staged"
  },
  {
