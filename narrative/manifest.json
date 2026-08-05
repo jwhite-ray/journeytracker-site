@@ -1489,6 +1489,22 @@
  },
  {
   "slug": "oregon-trail",
+  "order": 22,
+  "waypoint": "Blue Mountains (Grande Ronde descent)",
+  "file": "oregon-trail/22-v1.jpg",
+  "sourcePage": "https://books.google.com/books?id=dKiiCwGhW_gC&pg=PA210-IA3",
+  "license": "PD (U.S. Government report, published 1850)",
+  "credit": "George Gibbs (attrib.) / Ackerman Lith., “Two miles from encampment, Sept. 6th 1849”, from Maj. Osborne Cross's report of the 1849 march (US War Dept., 1850)",
+  "learnMoreURL": "https://en.wikipedia.org/wiki/Grande_Ronde_Valley",
+  "outputPx": "922x1230",
+  "originalPx": "1601x2500 (page scan, plate rotated upright)",
+  "cropNote": "KAN-123 fold-in, resolved via Google Books full-view Serial Set scan (HathiTrust bot-walled; OHS OrHi 84282 not digitized). Plate bound after p.210, illustration-list entry at p.211; caption date matches the Sept 6 1849 Grande Ronde descent narrative. Frame-interior crop, window right-of-center on the descending column and wagons; caption excluded.",
+  "jpegQuality": 85,
+  "bytes": 262624,
+  "status": "staged"
+ },
+ {
+  "slug": "oregon-trail",
   "order": 23,
   "waypoint": "Deschutes River Crossing",
   "file": "oregon-trail/23-v1.jpg",
