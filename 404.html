@@ -67,6 +67,21 @@ p.context { color: var(--ink-soft); margin-bottom: 1.25rem; }
   padding: 0.55rem 1.3rem;
 }
 .get a:hover { border-color: var(--accent); }
+.beta {
+  border-top: 1px solid var(--rule);
+  padding-top: 1.5rem;
+}
+.beta ol {
+  text-align: left;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  margin: 0 auto 1.5rem;
+  padding-left: 1.4rem;
+  max-width: 21rem;
+}
+.beta li { margin-bottom: 0.5rem; }
+.beta li a { color: var(--accent); font-weight: 600; text-decoration: none; }
+.beta li a:hover { text-decoration: underline; }
 #notfound { display: none; }
 #notfound a { color: var(--accent); }
 </style>
@@ -82,7 +97,14 @@ p.context { color: var(--ink-soft); margin-bottom: 1.25rem; }
       <p class="hint">Your invite code is the last part of the link you tapped — the letters and numbers after <strong>/i/</strong>. Enter it in the app under Trailmates.</p>
     </noscript>
     <p class="hint" id="jshint" hidden>Enter this code in the JourneyTracker app under Trailmates.</p>
-    <p class="get"><a href="/journeytracker/">Get the app&nbsp;→</a></p>
+    <div class="beta">
+      <p class="hint">JourneyTracker is in beta, so getting the app takes two quick steps:</p>
+      <ol>
+        <li>Download <a href="https://apps.apple.com/app/testflight/id899247664">TestFlight</a> — Apple's free app for beta apps — from the App&nbsp;Store.</li>
+        <li>Then open the beta invite below and install JourneyTracker from TestFlight.</li>
+      </ol>
+      <p class="get"><a href="https://testflight.apple.com/join/gsM86j8X">Join the JourneyTracker beta&nbsp;→</a></p>
+    </div>
   </div>
 
   <div id="notfound">
