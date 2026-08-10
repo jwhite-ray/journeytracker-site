@@ -3,8 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>W Jamm</title>
-<meta name="description" content="W Jamm — an independent software company. Makers of JourneyTracker.">
+<title>W Jamm — Independent Software Company</title>
+<meta name="description" content="W Jamm is an independent software company in Utah, USA. We make JourneyTracker, a walking and fitness app for iPhone, and publish free weekly Come, Follow Me scripture study guides.">
+<link rel="canonical" href="https://wjamm.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="W Jamm">
+<meta property="og:title" content="W Jamm — Independent Software Company">
+<meta property="og:description" content="Makers of JourneyTracker, a walking and fitness app for iPhone, and free weekly Come, Follow Me scripture study guides.">
+<meta property="og:url" content="https://wjamm.com/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "W Jamm",
+  "url": "https://wjamm.com/",
+  "email": "journeytrackerapplication@gmail.com",
+  "description": "Independent software company. Makers of JourneyTracker, a walking and fitness app for iPhone, and publishers of free weekly Come, Follow Me scripture study guides.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "Utah",
+    "addressCountry": "US"
+  }
+}
+</script>
 <style>
 :root {
   --bg: #faf8f4;
@@ -24,7 +45,8 @@
   }
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { height: 100%; }
+html { height: 100%; }
+body { min-height: 100%; }
 body {
   background: var(--bg);
   color: var(--ink);
@@ -36,7 +58,7 @@ body {
 }
 main {
   text-align: center;
-  padding: 2rem 1.5rem;
+  padding: 2rem 1.5rem 4.5rem;
 }
 .wordmark {
   font-family: "New York", "Iowan Old Style", Georgia, "Times New Roman", serif;
@@ -75,6 +97,14 @@ main {
   transition: border-color 0.15s ease;
 }
 .works a:hover { border-color: var(--accent); }
+.about {
+  max-width: 34rem;
+  margin: 2.75rem auto 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+.about a { color: var(--accent); text-decoration: none; }
+.about a:hover { text-decoration: underline; }
 footer {
   position: fixed;
   left: 0; right: 0; bottom: 1.4rem;
@@ -82,6 +112,8 @@ footer {
   color: var(--ink-soft);
   font-size: 0.85rem;
 }
+footer a { color: var(--ink-soft); text-decoration: none; }
+footer a:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -90,7 +122,8 @@ footer {
   <div class="underline"></div>
   <p class="sub">An independent software company.</p>
   <p class="works"><a href="journeytracker/">JourneyTracker&nbsp;→</a> <a href="cfm/">Come Follow Me Study&nbsp;→</a></p>
+  <p class="about">W Jamm is an independent software company based in Utah, USA. We build JourneyTracker, an iPhone app that turns everyday walking into progress along real-world routes, and we publish free weekly study guides for the Come, Follow Me curriculum. Questions? Email <a href="mailto:journeytrackerapplication@gmail.com">journeytrackerapplication@gmail.com</a>.</p>
 </main>
-<footer>W Jamm · Utah, USA</footer>
+<footer>W Jamm · Utah, USA · <a href="journeytracker/privacy.html">Privacy</a> · <a href="journeytracker/terms.html">Terms</a> · <a href="journeytracker/support.html">Support</a></footer>
 </body>
 </html>
