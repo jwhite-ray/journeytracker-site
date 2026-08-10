@@ -106,6 +106,13 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
 .persona-credit { font-size: 0.85rem; color: var(--ink-soft); }
 .citations { font-size: 0.9rem; color: var(--ink-soft); }
 .citations li { margin-bottom: 0.5rem; }
+/* Deep-link highlight: guide links target the exact referenced passage */
+:target { scroll-margin-top: 2.5rem; }
+span.ref:target, p:target, li:target, blockquote:target {
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
+  border-radius: 4px;
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 22%, transparent);
+}
 footer.site {
   margin-top: 4rem;
   padding-top: 1.5rem;
