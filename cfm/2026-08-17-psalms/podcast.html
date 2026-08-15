@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Intro Episode — Psalms — W Jamm</title>
+<meta name="description" content="The ~30-minute introductory episode for the Psalms week of Come Follow Me (August 17–23, 2026): two hosts and academic scholar on the context, content, and controversies of Psalms 1–2; 8; 19–33; 40; 46.">
+<link rel="stylesheet" href="../cfm.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="site-nav"><a href="./">← This week's guide</a></nav>
+  <p class="kicker">Introductory episode · ≈43 min</p>
+  <h1>The Shepherd, the Gate, and the Faded Letter</h1>
+  <p class="persona-credit">A conversation introducing the week. All voices — hosts and guest — are AI-written study personas, not real people.</p>
+  <p class="sub"><em>Weekly introductory episode — Come Follow Me, August 17–23, 2026: Psalms 1–2; 8; 19–33; 40; 46</em></p>
+
+  <div class="card">
+    <audio id="ep" controls preload="metadata" style="width:100%" src="audio.m4a"></audio>
+    <p class="meta" style="margin-top:0.6rem">Listen (43 min) or read below · speed:
+      <button class="spd" data-r="1">1×</button>
+      <button class="spd" data-r="1.25">1.25×</button>
+      <button class="spd" data-r="1.5">1.5×</button>
+      <button class="spd" data-r="2">2×</button>
+    </p>
+  </div>
+  <script>
+  (function () {
+    var audio = document.getElementById("ep");
+    var buttons = document.querySelectorAll(".spd");
+    buttons.forEach(function (b) {
+      b.style.cssText = "font:inherit;font-size:0.85rem;padding:0.1rem 0.6rem;margin-left:0.3rem;border:1px solid var(--rule);border-radius:999px;background:none;color:var(--accent);cursor:pointer";
+      b.addEventListener("click", function () {
+        audio.playbackRate = parseFloat(b.dataset.r);
+        buttons.forEach(function (o) { o.style.borderColor = "var(--rule)"; o.style.fontWeight = "normal"; });
+        b.style.borderColor = "var(--accent)"; b.style.fontWeight = "600";
+      });
+    });
+  })();
+  </script>
+
+  <h2>Cold Open</h2>
+  <p><strong>ELI:</strong> I read this block twice this week, and both times I got to the end of Psalm 22 and had to check whether I'd skipped a page.</p>
+  <p><strong>NATHAN:</strong> Because of the turn.</p>
+  <p><strong>ELI:</strong> Because of the turn. The man opens with, my God, my God, why hast thou forsaken me. And by verse twenty-two he's saying, I will declare thy name unto my brethren, in the midst of the congregation will I praise thee. I kept hunting for the part where something gets better. The rescue. The line that says, and then the Lord delivered him.</p>
+  <p><strong>NATHAN:</strong> It isn't there.</p>
+  <p><strong>ELI:</strong> It is not there. Nothing changes. The bulls of Bashan are still standing around. They're still dividing up his clothes. And he turns anyway.</p>
+  <p><strong>NATHAN:</strong> <em>(dryly)</em> Which is either the most encouraging thing in the Old Testament or the most confusing, depending on the week you've had.</p>
+  <p><strong>ELI:</strong> That's the week. That's this whole block.</p>
+  <p><strong>NATHAN:</strong> Twenty chapters. Psalms 1 and 2, then 8, then a long run from 19 through 33, then 40, then 46. A strange unit of study when you look at it straight on. Not a book, not a section, not a genre. A sampler pulled out of the front third of something much bigger.</p>
+  <p><strong>ELI:</strong> And most people will open it, read Psalm 23, feel something, and close it.</p>
+  <p><strong>NATHAN:</strong> Which is not a failure. That psalm has been doing that job for three thousand years and it's very good at it. But we've got five sessions, and this is not one of them. This is the front door. Nobody has to take notes. We walk around the outside of the building, point at the load-bearing walls, tell you where the arguments are, and let you go in.</p>
+  <p><strong>ELI:</strong> And we brought somebody who knows the building.</p>
+  <h2>What Kind of Book This Is</h2>
+  <p><strong>NATHAN:</strong> Our guest works on Hebrew poetry and the formation of the Psalter — how this collection got assembled, and what the arrangement is trying to tell you. Welcome.</p>
+  <p><strong>THE ACADEMIC:</strong> Thank you. And let me say at the top that I'm not going to be the person who tells you the psalms are less than you thought. That's the usual fear about having somebody like me on.</p>
+  <p><strong>ELI:</strong> It is a little bit the fear.</p>
+  <p><strong>THE ACADEMIC:</strong> <em>(amused)</em> I know. But it runs the other way. These poems get older, stranger, and more genuinely used the closer you look. Not smaller.</p>
+  <p><strong>NATHAN:</strong> Then start basic. What kind of object is the book of Psalms?</p>
+  <p><strong>THE ACADEMIC:</strong> It's an anthology of anthologies, and the editors did not bother to hide the joins.</p>
+  <p><strong>ELI:</strong> Concretely?</p>
+  <p><strong>THE ACADEMIC:</strong> The Hebrew Psalter is divided into five books, marked off by little doxologies that read like closing formulas rather than like the last line of the poem they're attached to. There are four of them, and they carve the collection into five. Your block sits almost entirely in Book One, Psalms 1 through 41. Psalm 46 is over in Book Two, which will matter in a minute.</p>
+  <p><strong>ELI:</strong> A five-part division could just be somebody's tidiness. What makes you say the seams show?</p>
+  <p><strong>THE ACADEMIC:</strong> Two things you can check with an English Bible. First, Psalm 72, verse 20 says, the prayers of David the son of Jesse are ended.</p>
+  <p><strong>NATHAN:</strong> Except they aren't.</p>
+  <p><strong>THE ACADEMIC:</strong> Dozens of psalms attributed to David come after it. That's a colophon — the ancient equivalent of a page that says end of file, and somebody bound more folders in behind it and didn't take the page out.</p>
+  <p><strong>ELI:</strong> Huh.</p>
+  <p><strong>THE ACADEMIC:</strong> The second one is better, and it's in your reading. Psalm 40, verses 13 through 17, shows up again later as Psalm 70. Almost word for word.</p>
+  <p><strong>NATHAN:</strong> Same poem, two addresses.</p>
+  <p><strong>THE ACADEMIC:</strong> Same poem, two addresses. An author does not accidentally publish the same poem twice under two numbers. An editor compiling from separate source collections does that constantly.</p>
+  <p><strong>ELI:</strong> That's a clean argument. I've never heard it put that way.</p>
+  <p><strong>THE ACADEMIC:</strong> It's the cleanest one there is. And here's what makes it more than technical. Where Psalm 40 has the divine name — the Lord, in small capitals in your King James — the version in Psalm 70 has swapped it for the generic word for God.</p>
+  <p><strong>NATHAN:</strong> Because Psalm 70 sits in the Elohistic stretch.</p>
+  <p><strong>THE ACADEMIC:</strong> Right. Psalms 42 through 83 are a run where the generic word crowds out the divine name to a degree far too lopsided to be a style choice. Scholars call it the Elohistic Psalter, and Psalm 46 is inside it.</p>
+  <p><strong>ELI:</strong> So two of our twenty chapters sit on opposite sides of that seam. And an editor changed the name of God in an inspired text.</p>
+  <p><strong>THE ACADEMIC:</strong> An editor changed the name of God in an inspired text, and the result is scripture. That sentence is in one of this week's essays and I wouldn't improve on it.</p>
+  <p><strong>NATHAN:</strong> That's the Latter-day Saint scholar, and she makes the same point about Psalm 40 by name.</p>
+  <p><strong>ELI:</strong> I want to sit there one more second, because that's the actual doorway into the week. If you grew up thinking scripture arrived, and the book itself says it was assembled — that's not nothing.</p>
+  <p><strong>THE ACADEMIC:</strong> It isn't. But notice the direction. Assembled by whom? By people who were using these poems. The seams are evidence of use.</p>
+  <h2>The Double Gate</h2>
+  <p><strong>NATHAN:</strong> Psalms 1 and 2. This is the piece most people skate past, and it changes how the whole thing reads.</p>
+  <p><strong>THE ACADEMIC:</strong> Almost every psalm in Book One has a superscription — a heading. To the chief musician upon Gittith, a psalm of David. Three psalms in this week's block have no heading at all in the Hebrew: 1, 2, and 33.</p>
+  <p><strong>ELI:</strong> Which is unusual.</p>
+  <p><strong>THE ACADEMIC:</strong> For Book One, very. And the standard explanation for the first two is that they aren't items in the collection. They're the preface.</p>
+  <p><strong>NATHAN:</strong> The front matter.</p>
+  <p><strong>THE ACADEMIC:</strong> And they're bound together by a bracket you can see in English. Psalm 1 opens with the word ashrei — blessed, or happy, is the man. Psalm 2 closes with the same word — blessed are all they that put their trust in him.</p>
+  <p><strong>ELI:</strong> Bookends.</p>
+  <p><strong>THE ACADEMIC:</strong> And ancient readers noticed. There's a rabbinic tradition in the Talmud treating the two as a single chapter. And in Acts 13, where Paul quotes Psalm 2, there are manuscripts — Codex Bezae, part of the Old Latin tradition — that call it the first psalm rather than the second.</p>
+  <p><strong>NATHAN:</strong> Which only makes sense if their scroll had them written as one poem.</p>
+  <p><strong>THE ACADEMIC:</strong> Somebody's did.</p>
+  <p><strong>ELI:</strong> So why does that matter on a Wednesday night?</p>
+  <p><strong>THE ACADEMIC:</strong> Because of what the two are about. Psalm 1 is a wisdom poem about two ways to live, and it says the blessed man's delight is in the law of the Lord. Psalm 2 is a royal poem about the enthronement of an anointed king — yet have I set my king upon my holy hill of Zion. Put those at the front of a hymnbook and you're instructing the reader: what follows is torah to be meditated on, and it is testimony about a king. And those are one subject, not two.</p>
+  <p><strong>NATHAN:</strong> The rabbi's essay points out what the pairing does. You get the man who does not stand in the counsel of the wicked — and then immediately the wicked taking counsel together against the Lord and his anointed. One poem, two scales.</p>
+  <p><strong>ELI:</strong> Oh, that's good. Personal and geopolitical, same picture. Can I ask the awkward question about Psalm 1 now, or should I wait?</p>
+  <p><strong>NATHAN:</strong> <em>(laughing)</em> It's the introduction. Ask the awkward question.</p>
+  <p><strong>ELI:</strong> Psalm 1 says the righteous man will be like a tree planted by the rivers of water, and whatsoever he doeth shall prosper. And we just spent last week in Job, whose entire argument is that that's not how the world works.</p>
+  <p><strong>NATHAN:</strong> And the curriculum put them back to back with no comment.</p>
+  <p><strong>ELI:</strong> With no comment! Same summer. That's in the questioner's essay and I couldn't let it go. The tidy answer is that Psalm 1 is the general rule and Job is the exception — and that works fine unless your life is the exception.</p>
+  <p><strong>THE ACADEMIC:</strong> Which at some point everybody's is. And from my side of the table: the Psalter is not internally consistent about retribution, and that's one of its most honest features. This block contains Psalm 1 verse 3 and Psalm 22 verse 1 and does not reconcile them.</p>
+  <p><strong>ELI:</strong> It just puts them both in the hymnbook.</p>
+  <p><strong>THE ACADEMIC:</strong> It puts them both in the hymnbook.</p>
+  <p><strong>ELI:</strong> And the practical essay's counsel on that verse is: keep the practice, drop the ledger. Verse 2 says the man meditates day and night — that's an hours claim, not a mood. And then the line I wrote down. The tree by the water isn't planted because the fruit is guaranteed on your schedule. It's planted because that's where the water is.</p>
+  <p><strong>NATHAN:</strong> <em>(beat)</em> Yeah.</p>
+  <p><strong>ELI:</strong> I know.</p>
+  <h2>Sorting the Pile</h2>
+  <p><strong>NATHAN:</strong> Give people a map. Twenty chapters is a lot to hold.</p>
+  <p><strong>THE ACADEMIC:</strong> The framework almost everyone still uses comes from Hermann Gunkel, a German scholar whose introduction to the Psalms was finished after his death and published in 1933. His move was to stop sorting psalms by supposed author or date and sort them by type — recurring form, vocabulary, and the setting in life the form implies.</p>
+  <p><strong>NATHAN:</strong> And this block sorts unusually cleanly.</p>
+  <p><strong>THE ACADEMIC:</strong> It does. Hymns of praise: Psalms 8, 29, 33, and the front half of 19. Individual laments, the largest category in the whole Psalter: 22, 25, 26, 28, 31, 40. Individual thanksgivings, where the rescue already happened: 30 and 32. Royal psalms: 2, 20, 21. An entrance liturgy: 24. A song of Zion: 46. Wisdom poetry: Psalm 1.</p>
+  <p><strong>ELI:</strong> What about 23?</p>
+  <p><strong>THE ACADEMIC:</strong> Twenty-three and 27 usually get called songs of confidence. Which is a polite way of saying: a lament has a pivot in the middle where the speaker turns toward trust, and in these two the pivot swallowed the whole poem.</p>
+  <p><strong>ELI:</strong> The turn expanded until it was the song.</p>
+  <p><strong>NATHAN:</strong> Say the lament number again, because it surprises people.</p>
+  <p><strong>THE ACADEMIC:</strong> Laments are the most common psalm type in the book. More than praise. That's the finding behind a lot of twentieth-century work — Claus Westermann on praise and lament, Walter Brueggemann's scheme of orientation, disorientation, and new orientation. The complaint isn't the exception in Israel's hymnbook. It's the default setting.</p>
+  <p><strong>ELI:</strong> That's my favorite fact of the week, and here's why. The practical essay pulls one very small assignment out of it. Try one prayer this week — one, on a weekday, not Sunday — where the first sentence out of your mouth is the complaint. In the words you'd use at a kitchen table. With the name of the person, or the diagnosis, or the number in it. Say it, and stop. Don't resolve it in the same session.</p>
+  <p><strong>NATHAN:</strong> Don't resolve it in the same session.</p>
+  <p><strong>ELI:</strong> Because most of us pray in a register we'd never use with a friend. We open with gratitude, soften the hard part into a request for patience, and close before we've said the true thing.</p>
+  <p><strong>NATHAN:</strong> <em>(quietly)</em> That's uncomfortably accurate.</p>
+  <p><strong>ELI:</strong> Very uncomfortably accurate.</p>
+  <p><strong>NATHAN:</strong> Do the poetry itself while we're here. People know Hebrew poetry is parallelism. I'm not sure they know what to do with it.</p>
+  <p><strong>THE ACADEMIC:</strong> And the version most people were taught is out of date. It goes back to Robert Lowth in the seventeen-fifties, who sorted the paired lines into synonymous, antithetic, and synthetic.</p>
+  <p><strong>ELI:</strong> Which is roughly what I got in seminary.</p>
+  <p><strong>THE ACADEMIC:</strong> Most people did. And in 1981 James Kugel took the synonymous category apart. The second half of a line is almost never a restatement. It's a sharpening, an escalation, a specification. Roughly: A — and what's more, B.</p>
+  <p><strong>NATHAN:</strong> Example from this week.</p>
+  <p><strong>THE ACADEMIC:</strong> Psalm 29, verse 5. The voice of the Lord breaketh the cedars — yea, the Lord breaketh the cedars of Lebanon.</p>
+  <p><strong>ELI:</strong> Which sounds like repetition.</p>
+  <p><strong>THE ACADEMIC:</strong> Until you notice the second line has named the specific trees, and the cedars of Lebanon are the proverbially unbreakable ones. The biggest timber anyone in that world knew. So the movement isn't cedars, cedars. It's: trees snap — and I mean those trees.</p>
+  <p><strong>ELI:</strong> Oh, that's much better.</p>
+  <p><strong>THE ACADEMIC:</strong> Once you stop hearing repetition and start hearing intensification, the poems move differently. It's the most useful reading habit anybody can pick up this week, and it costs nothing.</p>
+  <p><strong>ELI:</strong> For somebody who's read Psalm 23 four hundred times and feels nothing anymore, that might be the fix.</p>
+  <p><strong>NATHAN:</strong> Stay on Psalm 29, though, because this is where the scholarship gets loud.</p>
+  <p><strong>THE ACADEMIC:</strong> It's the clearest case in the Hebrew Bible of a poem with a Canaanite substrate underneath it.</p>
+  <p><strong>ELI:</strong> Define substrate like I'm tired.</p>
+  <p><strong>THE ACADEMIC:</strong> <em>(laughing)</em> The poem speaks a storm god's dialect, and the evidence is all internal. The action is a thunderstorm rolling in off the Mediterranean, snapping cedars in Lebanon, moving inland to shake the wilderness. Verse 1 addresses a group the King James calls "O ye mighty," but the Hebrew is bene elim — sons of gods. A divine council. Verse 6 names Sirion, which Deuteronomy tells us is the Sidonian name for Mount Hermon. And verse 10's word for flood is otherwise essentially reserved for the deluge in Genesis.</p>
+  <p><strong>NATHAN:</strong> And the proposal is that it started as a hymn to Baal.</p>
+  <p><strong>THE ACADEMIC:</strong> That goes back to a paper by H. L. Ginsberg in 1935, and Frank Moore Cross developed the philological case fifteen years later. Not everybody accepts wholesale borrowing. But that the poem speaks the storm-god idiom is not seriously disputed.</p>
+  <p><strong>ELI:</strong> So somebody took a hymn about a weather god and made it a hymn about the God of Israel enthroned above the water. [after a beat] I like that more than I expected to.</p>
+  <p><strong>NATHAN:</strong> Say why.</p>
+  <p><strong>ELI:</strong> Because it means the tradition was willing to walk into somebody else's temple and carry the good stuff out. That's not a scandal, that's a claim — that truth exists outside the borders and is meant to be gathered. And the Latter-day Saint essay says exactly that: for a tradition that believes that, this should be a comfortable fact rather than an awkward one.</p>
+  <p><strong>NATHAN:</strong> If you believe God has been talking to more people than your own list, you should expect fingerprints.</p>
+  <p><strong>THE ACADEMIC:</strong> And when a poet borrows, you can usually see what he adjusted. Psalm 19 is the other place to watch it. Its front half is a cosmic hymn that builds to the sun — which has a tent pitched for it and runs its circuit like a champion — and its back half is a Torah meditation in a completely different register. Some call it composite; others defend the unity. But nobody disputes that in that passage the sun is an object in the sky somebody pitched a tent for. It is not a deity.</p>
+  <h2>The Shepherd and the Gate</h2>
+  <p><strong>ELI:</strong> I want 23 and 24, because I think the pairing is the emotional center of the week and almost nobody reads them together.</p>
+  <p><strong>NATHAN:</strong> They say opposite things.</p>
+  <p><strong>ELI:</strong> They say opposite things! Psalm 23 says the Lord takes you where you need to go — pasture, water, valley, table, house — and asks nothing except that you follow. Then Psalm 24 opens the door and asks: who shall ascend into the hill of the Lord, who shall stand in his holy place. And answers: he that hath clean hands and a pure heart.</p>
+  <p><strong>NATHAN:</strong> Which is a standard most of us fail on any given Tuesday.</p>
+  <p><strong>ELI:</strong> That's the connector's line, and it's right. And Israel sang both.</p>
+  <p><strong>THE ACADEMIC:</strong> Let me do the form on 24 first, because it sharpens the pairing. Psalm 24 is an entrance liturgy, with a twin at Psalm 15. A question posed at the sanctuary gate — who shall ascend — an answer specifying moral qualifications, and then an antiphonal gate-opening sequence. Lift up your heads, O ye gates. Who is this King of glory?</p>
+  <p><strong>ELI:</strong> Two voices.</p>
+  <p><strong>THE ACADEMIC:</strong> Almost certainly. Sigmund Mowinckel, who pushed the field from literature toward liturgy, treated this as his best exhibit — the questions and answers, verse 7 repeated verbatim at verse 9, the Selah markers. It reads as a script for a procession. One party outside the gate, one inside.</p>
+  <p><strong>NATHAN:</strong> The rabbi backs that from the Jewish side. Psalm 24 is still the Sunday psalm in the prayer book, and the Mishnah records it as what the Levites sang in the Temple on the first day of the week.</p>
+  <p><strong>ELI:</strong> So when the manual says the hill of the Lord probably means the temple mount —</p>
+  <p><strong>THE ACADEMIC:</strong> For once the manual says precisely what the form critics would say. No daylight at all.</p>
+  <p><strong>ELI:</strong> Now the part people miss, because it's in our own appendix. Joseph Smith rewrote those verses, and the revision changes who is being addressed. The King James says, lift up your heads, O ye gates, and be ye lift up, ye everlasting doors, and the King of glory shall come in. The Joseph Smith Translation replaces the architecture with people. Lift up your heads, O ye generations of Jacob. The everlasting doors become everlasting generations. And then it says he will roll away the heavens and come down to redeem his people.</p>
+  <p><strong>NATHAN:</strong> The direction of travel flips.</p>
+  <p><strong>ELI:</strong> In the Hebrew, the gates open upward and the King comes in. In the revision, the people are told to lift their heads and the King comes down.</p>
+  <p><strong>THE ACADEMIC:</strong> Read against verses 3 and 4, that's substantive, not cosmetic.</p>
+  <p><strong>ELI:</strong> That's the connector's argument. The psalm asks who is worthy to ascend the hill. The revision answers that before anybody ascends, he descends. Which is what keeps verse 4 from being despair.</p>
+  <p><strong>NATHAN:</strong> I should flag that what the Joseph Smith Translation is doing textually is itself contested — Robert Matthews read it as substantially restorative, recovering something ancient, while Kevin Barney found essentially no ancient manuscript support for most of its readings and proposed reading it as inspired commentary instead. Open question. And the questioner's essay says Psalm 32 is a good place to feel its weight, because there the revision takes "whose sin is covered" and makes it "who have no sins to be covered."</p>
+  <p><strong>THE ACADEMIC:</strong> <em>(interested)</em> Huh. That's a theological reversal, not a stylistic one.</p>
+  <p><strong>NATHAN:</strong> A total reversal. Covering implies the sin is still there and merely hidden. This asserts removal. And it happens to be the verse Paul built on in Romans 4.</p>
+  <p><strong>ELI:</strong> Whichever way you come down on the translation as a text, that's the doctrinal question the week actually poses. Is forgiveness a covering or a removal.</p>
+  <h2>The Cry and the Faded Letter</h2>
+  <p><strong>NATHAN:</strong> Psalm 22. We've been circling it for twenty minutes.</p>
+  <p><strong>THE ACADEMIC:</strong> Everybody circles it. It's a lament with a textbook shape. Complaint, remembered deliverance, renewed complaint, petition, and a vow of public praise once rescued. The imagery is stock vocabulary for the genre — bulls of Bashan, dogs, lions, a melting heart, strength dried up like a potsherd. Nothing in it announces itself as prediction.</p>
+  <p><strong>ELI:</strong> And it ends alive.</p>
+  <p><strong>THE ACADEMIC:</strong> It ends alive. Verse 25, I will pay my vows before them that fear him. Vows are paid by someone who's alive, standing in the sanctuary, telling an assembly what it was like in the dark. And verse 24 says something that flatly contradicts verse 1 — he hath not despised nor abhorred the affliction of the afflicted, neither hath he hid his face from him.</p>
+  <p><strong>ELI:</strong> Wait. Say that again.</p>
+  <p><strong>THE ACADEMIC:</strong> Verse 1 says, why hast thou forsaken me. Verse 24 says, he did not hide his face. Same poem, same voice.</p>
+  <p><strong>NATHAN:</strong> And then a man on a cross says verse 1 out loud, in Aramaic, and Matthew records it.</p>
+  <p><strong>THE ACADEMIC:</strong> And this is where I hand the microphone back, because what comes next is not textual criticism.</p>
+  <p><strong>NATHAN:</strong> Stay for one more piece. The six-outlooks essay takes Donald Parry's framework — six legitimate ways to read a prophetic text, developed for Isaiah — and walks Psalm 22 verse 1 through all six. And he picks that verse because it's the one where the readings collide instead of harmonizing.</p>
+  <p><strong>ELI:</strong> Meaning?</p>
+  <p><strong>NATHAN:</strong> With most verses the historical reading and the messianic reading run parallel and reinforce each other. With this one they end in different places. In the near view, verse 24 is the resolution — God did not hide his face, and the man was wrong about being forsaken. In the distant view, verse 1 is the truth. He did. And the Man did not live.</p>
+  <p><strong>ELI:</strong> So the psalm's own answer to its own question fails at exactly the moment it matters most.</p>
+  <p><strong>NATHAN:</strong> Unless the resolution has moved. Unless "he heard" gets answered three days later instead of three verses later.</p>
+  <p><strong>ELI:</strong> <em>(quietly)</em> Oh.</p>
+  <p><strong>NATHAN:</strong> Verses 1 through 21 are Friday. Verse 22 forward — I will declare thy name unto my brethren — is what Hebrews quotes, and it quotes it as the risen Christ's words about the people he isn't ashamed to call brethren. So the turn at verse 22 isn't a mood change. It's the Resurrection.</p>
+  <p><strong>THE ACADEMIC:</strong> I'll note from outside that a first-century Jew hearing the opening line of that psalm from a cross would have known where the poem goes. Quoting line one of something everybody has memorized invokes the whole thing.</p>
+  <p><strong>ELI:</strong> Which cuts both ways.</p>
+  <p><strong>THE ACADEMIC:</strong> It cuts both ways. A dying Jew praying the opening line of a psalm he'd known since childhood is also the most natural thing in the world.</p>
+  <p><strong>NATHAN:</strong> And the questioner presses there. She cites Donald Juel's argument — that the early Christians began with a crucified and risen Messiah and then went combing Israel's scriptures for language adequate to him. Conviction first, proof-texts second. On that reading, Matthew didn't find the Crucifixion in Psalm 22. He found Psalm 22 in the Crucifixion.</p>
+  <p><strong>ELI:</strong> How do you answer that?</p>
+  <p><strong>NATHAN:</strong> She says it's a false dichotomy — a text can be a real lament from a real sufferer and be shaped by a God who knew what it would one day describe. And the Book of Mormon's own habit runs that way, since Nephi likens scripture to his people without claiming its authors were talking about him. Then she adds that what's actually at stake for us is smaller than it looks. Nothing in the Restoration requires that every psalm the New Testament quotes was written as prediction.</p>
+  <p><strong>ELI:</strong> And the chapter headings in our edition that call Psalms 8, 21, 22 and 40 messianic psalms of David?</p>
+  <p><strong>THE ACADEMIC:</strong> Modern editorial apparatus.</p>
+  <p><strong>NATHAN:</strong> Twentieth-century additions prepared for our own edition. Not the superscriptions, not the Hebrew, not revelation. The superscriptions are the italic lines underneath, and those are ancient. What they mean is a separate fight.</p>
+  <p><strong>ELI:</strong> All right. Verse 16.</p>
+  <p><strong>THE ACADEMIC:</strong> <em>(sighing)</em> Verse 16.</p>
+  <p><strong>ELI:</strong> They pierced my hands and my feet. Which is the verse the lesson explicitly asks you to pair with the Crucifixion.</p>
+  <p><strong>THE ACADEMIC:</strong> And it deserves precision rather than advocacy in either direction. The Masoretic Text — the medieval Hebrew standard — reads ka'ari yaday ve-raglay. Like a lion, my hands and my feet.</p>
+  <p><strong>ELI:</strong> Which isn't a sentence.</p>
+  <p><strong>THE ACADEMIC:</strong> Which has no verb in it. That's the actual problem. Everyone agrees something is damaged or some idiom is lost. The Septuagint, made centuries before Christ, has a verb meaning they dug, or gouged. That's where the King James "pierced" comes from.</p>
+  <p><strong>NATHAN:</strong> So the question is whether the Greek preserves an older and better Hebrew reading, or whether the translators guessed at a broken line and a prophecy got built on the guess.</p>
+  <p><strong>THE ACADEMIC:</strong> Exactly. And then a Psalms fragment turns up from Nahal Hever, copied in roughly the first century, which appears to read the consonants with a final waw rather than a yod — which would give you a verb.</p>
+  <p><strong>ELI:</strong> Supporting the Greek.</p>
+  <p><strong>THE ACADEMIC:</strong> Apparently. Two cautions, and neither is apologetics for either side. In the script of that period, waw and yod are nearly identical strokes; scribes confused them constantly, and the ink at the decisive point is degraded enough that specialists who have examined the facsimile disagree about what is physically there. And even granting the reading, the form is odd, and "dig" is not technical crucifixion vocabulary in any case.</p>
+  <p><strong>ELI:</strong> So where does that leave a person?</p>
+  <p><strong>THE ACADEMIC:</strong> Both readings are ancient, and the manuscript evidence does not settle it either direction. Gregory Vall argued for the verbal reading in the Journal of Biblical Literature; Kristin Swenson defended a lion-based reading in the same journal seven years later. Neither carried the field, and it got revisited in a textual-criticism journal just last year — not what you'd expect if a scroll fragment had settled it.</p>
+  <p><strong>NATHAN:</strong> The Latter-day Saint survey is Shon Hopkin's article in BYU Studies. Be careful what you take from it.</p>
+  <p><strong>THE ACADEMIC:</strong> What it establishes is real. A Hebrew reading behind the Greek "pierced" existed before the Jewish-Christian polemics of the second century — so the charge that Christians simply invented it is chronologically wrong. That's a genuine gain, and a more modest one than apologetic summaries usually claim.</p>
+  <p><strong>ELI:</strong> And here's the pastorally important half. The rabbi's essay says: look, the Hebrew your Jewish neighbor is reading says lion. And that's not a late evasion. Rashi, in eleventh-century France, glosses it as though the hands are crushed in a lion's mouth, and points to Hezekiah using the identical idiom in Isaiah. He's reading the consonants straightforwardly, not defensively.</p>
+  <p><strong>NATHAN:</strong> Worth knowing before you quote this verse at somebody.</p>
+  <p><strong>ELI:</strong> Very worth knowing. And what makes honesty affordable for us: in 3 Nephi, the risen Christ invites the multitude to feel the prints of the nails in his hands and in his feet. So the tradition of pierced extremities does not stand or fall on one smudged letter in a decayed scroll.</p>
+  <p><strong>NATHAN:</strong> We can afford the honesty.</p>
+  <p><strong>ELI:</strong> And I don't think we use that often enough.</p>
+  <p><strong>NATHAN:</strong> One more, and then let's move, because it's the most surprising item in anybody's essay. Jewish tradition has its own long-standing owner of that cry, and it isn't David. It's Esther.</p>
+  <p><strong>ELI:</strong> Esther.</p>
+  <p><strong>NATHAN:</strong> The psalm's superscription is ayelet ha-shachar, the hind of the dawn. The Talmud asks why Esther is likened to the dawn, and answers: just as the dawn is the conclusion of the entire night, Esther was the conclusion of all the miracles. And then another passage narrates the moment she walks into the inner court unsummoned — where arriving without an invitation is a capital offense — and says the Divine Presence departed from her, and she immediately said, my God, my God, why have you forsaken me.</p>
+  <p><strong>ELI:</strong> <em>(after a pause)</em> That's the interior monologue of a woman walking into a room where she can be killed for showing up. I've read Esther my whole life and never once thought about what was going on in her head in that hallway.</p>
+  <p><strong>THE ACADEMIC:</strong> And the six-outlooks essay makes the point that the verse has been three people's, and refusing any one of them impoverishes the other two.</p>
+  <h2>The Verses Nobody Frames</h2>
+  <p><strong>NATHAN:</strong> We should do the uncomfortable material, because otherwise people get to session four and feel ambushed.</p>
+  <p><strong>ELI:</strong> Do the cursings.</p>
+  <p><strong>THE ACADEMIC:</strong> The imprecatory edge. These poems ask God for harm. Psalm 28 — give them according to their deeds, render to them their desert. Psalm 31 — let the wicked be ashamed, let them be silent in the grave. Psalm 40 — let them be desolate for a reward of their shame. And Psalm 21, which asks God to destroy the enemies' offspring from among the children of men.</p>
+  <p><strong>ELI:</strong> Their children.</p>
+  <p><strong>THE ACADEMIC:</strong> Their children. And these are not lapses from the lament form. They're integral to it.</p>
+  <p><strong>NATHAN:</strong> The questioner handles it by going to C. S. Lewis, who has a chapter called "The Cursings" and who refused to soften them — he called such passages diabolical, and then argued that the vindictiveness is itself evidence of a moral seriousness about evil that indifference lacks.</p>
+  <p><strong>ELI:</strong> You don't have to buy his solution.</p>
+  <p><strong>NATHAN:</strong> You don't have to buy it at all. But he didn't pretend the verses weren't there, and that's the standard.</p>
+  <p><strong>THE ACADEMIC:</strong> The other thing devotional reading drops is the physicality. These poems are unusually willing to specify what suffering feels like in a body. Bones out of joint and a heart melted like wax. An eye consumed with grief. Moisture turned into the drought of summer.</p>
+  <p><strong>ELI:</strong> That last one's Psalm 32, and it's about keeping quiet about something you did. When I kept silence, my bones waxed old. And the practical essay gets specific with it in a way that made me squirm — it says most of what we owe has a return address. If you shaded a number on an expense report, the fix is an email with a corrected figure.</p>
+  <p><strong>NATHAN:</strong> And Psalm 24 puts the honesty requirement in exactly those terms. The one who ascends is the one who hath not sworn deceitfully.</p>
+  <p><strong>ELI:</strong> Not "thought impure thoughts." Made a promise he shaped to be misread. That's a workplace sin. A Tuesday sin.</p>
+  <p><strong>NATHAN:</strong> Last hard one — the authorship problem with teeth. Psalm 26. Suppose the traditional ascriptions are right. You're then praying "I have walked in mine integrity" in the voice of the man from 2 Samuel 11. And our own scripture is blunt: the Doctrine and Covenants says David fell from his exaltation because of Uriah.</p>
+  <p><strong>ELI:</strong> So the block asks you to sing the self-vindication of a man scripture says was not vindicated.</p>
+  <p><strong>NATHAN:</strong> There are honest answers — it may be a liturgical oath of innocence about one specific accusation rather than a claim of general sinlessness, and Psalm 32 shows you the other David. Some readers think that juxtaposition is the whole point. Others find it disturbing that the psalm of confession never names what was confessed. The lesson raises neither, and we're going to.</p>
+  <h2>Before You Start</h2>
+  <p><strong>ELI:</strong> Two gifts before we send people off. First: the "be still" problem.</p>
+  <p><strong>NATHAN:</strong> <em>(laughing)</em> The wall decal.</p>
+  <p><strong>ELI:</strong> The wall decal. Psalm 46, verse 10. Be still, and know that I am God.</p>
+  <p><strong>THE ACADEMIC:</strong> The Hebrew is harpu. An imperative from a root meaning to slacken, to let drop, to let go your grip. And the context is one verse after God breaks the bow and cuts the spear in sunder and burns the chariot in the fire. The addressees are raging nations, not a quiet reader on a sofa. The newer Jewish Publication Society translation renders it bluntly — desist, realize that I am God.</p>
+  <p><strong>ELI:</strong> The rabbi says English readers turned it into a devotional whisper, and in the Hebrew it's closer to a shout across a battlefield. Drop your weapons.</p>
+  <p><strong>NATHAN:</strong> Does that ruin the verse?</p>
+  <p><strong>ELI:</strong> I don't think so. The Doctrine and Covenants picks it up in December 1833, when the Saints have just been driven out of Jackson County, and it takes both of Psalm 46's hinges within two verses — be still and know that I am God, and Zion shall not be moved out of her place, notwithstanding her children are scattered. That's not a meditation cue. That's a command to stop fighting, given to people who had just lost their houses.</p>
+  <p><strong>NATHAN:</strong> Second gift.</p>
+  <p><strong>ELI:</strong> From the rabbi, and it's timing our manual couldn't have known about. This lesson week sits inside the month of Elul — the run-up to the High Holy Days. Which means right now, this week, in synagogues everywhere, twice a day, Jews are saying Psalm 27. The custom comes from a midrash that reads the opening verse as a calendar. My light — Rosh Hashanah. My salvation — Yom Kippur. And later custom heard Sukkot in verse 5, because "he shall hide me in his pavilion" is, in Hebrew, in his sukkah.</p>
+  <p><strong>NATHAN:</strong> Light, atonement, shelter.</p>
+  <p><strong>ELI:</strong> The whole autumn in three verses. And look what it does to the psalm. Read as literature, Psalm 27 is a puzzle — six verses of serene confidence, then it lurches into panic at verse 7, and scholars have proposed it's two psalms stitched together. Read liturgically, the seam is the point. This is someone walking toward judgment who is confident and terrified at once, and says so out loud every morning for forty days. When my father and my mother forsake me, then the Lord will take me up — that is not a serene sentence. It's said by people who mean it.</p>
+  <p><strong>NATHAN:</strong> <em>(quietly)</em> That's the whole week in a paragraph.</p>
+  <p><strong>ELI:</strong> It sort of is.</p>
+  <p><strong>NATHAN:</strong> Let's land it. Five sessions ahead, and this was not one of them — this was the map, not the territory. What do you want in somebody's head when they open the text tonight?</p>
+  <p><strong>THE ACADEMIC:</strong> Three things. Read the second half of every line as an escalation rather than a repetition. Hold your dating loosely — anyone who tells you precisely when Psalm 23 was written is telling you something the evidence doesn't support. And notice how much of this book was made for saying out loud, in a room, with other people. Psalm 25 is an acrostic with a damaged alphabet and an extra line tacked on past the end that breaks the singular voice to pray for the whole nation: redeem Israel, O God, out of all his troubles.</p>
+  <p><strong>NATHAN:</strong> A private lament acquiring a congregational ending.</p>
+  <p><strong>THE ACADEMIC:</strong> Which is what happens when a poem enters a liturgy. This is not a book of private meditations that later got sung. It's a hymnbook that was always sung, and some of the people singing it were miserable.</p>
+  <p><strong>ELI:</strong> Mine's shorter. Somebody in your ward, or at your table, is in Psalm 22 this week. And the strongest temptation in ministering is to move them along to Psalm 23, because we like the second one better.</p>
+  <p><strong>NATHAN:</strong> Don't.</p>
+  <p><strong>ELI:</strong> Don't. There's an old rule in Jewish law about visiting a mourner — the comforters aren't permitted to open the conversation until the mourner opens first. It's drawn from Job's friends, who sat with him seven days and said nothing because they saw his grief was very great. The visitor doesn't pick the subject and doesn't pick the timing.</p>
+  <p><strong>NATHAN:</strong> Including the timing of silence.</p>
+  <p><strong>ELI:</strong> Including that. So go, don't bring a lesson, ask one question and then stop talking. Don't say "at least." Don't offer the reframe, even if it's true — Psalm 22 verse 24 is true, but it's theirs to arrive at, not yours to hand them. Bring something that solves a logistics problem instead. A meal, a ride, an hour of childcare. Verse 26 says the meek shall eat and be satisfied, and that's not a metaphor you need to explain to anybody.</p>
+  <p><strong>NATHAN:</strong> Mine's one footnote. Psalm 8 asks, what is man, that thou art mindful of him. The King James says God made him a little lower than the angels. Look at the footnote in your own scriptures, because it says something else. It says: Hebrew, less than the gods.</p>
+  <p><strong>ELI:</strong> Which is what the Hebrew word is.</p>
+  <p><strong>NATHAN:</strong> Elohim. Plural. The Greek translators softened it to angels, Hebrews followed the Greek, the King James inherited it down that chain — and our own edition's footnote quietly preserves the older reading. Contested ground, and we'll get into it later in the week. But the footnote is there, in the official study text, doing real work.</p>
+  <p><strong>ELI:</strong> Which is the shape of the whole block, isn't it.</p>
+  <p><strong>NATHAN:</strong> It is. The comfortable verse and the strange one turn out to be the same verse. The shepherd and the gate are in consecutive chapters. Psalm 1 and Psalm 22 are in the same book and don't agree. And the editors left every seam showing.</p>
+  <p><strong>ELI:</strong> Because they were busy using it.</p>
+  <p><strong>NATHAN:</strong> Because they were busy using it. Go read. We'll see you in session one.</p>
+  <h2>Go deeper</h2>
+  <ul>
+    <li><a href="personas/lds-scholar.html">Our LDS scholar</a> — What the manuscripts, the superscriptions, and the Joseph Smith Translation actually show — from David's 3,600 compositions to the footnote that says "less than the gods."</li>
+    <li><a href="personas/academic-scholar.html">Our academic scholar</a> — The Psalter as an anthology of anthologies whose editors never hid the joins: genres, doublets, a damaged acrostic, and the crux at 22:16 without advocacy.</li>
+    <li><a href="personas/honest-questioner.html">Our honest questioner</a> — The hard questions the lesson does not raise — prophecy or hindsight, David's self-vindication, the cursings, and the limits of the "pierced" argument.</li>
+    <li><a href="personas/rabbi.html">Our rabbi</a> — Twenty chapters as they are actually used — Psalm 27 twice a day through Elul, Psalm 24 on Sundays in the Temple, and Esther as the owner of "My God, my God."</li>
+    <li><a href="personas/six-outlooks.html">Our six-outlooks essay</a> — Psalm 22:1 walked through Donald Parry's six interpretive stances, where the near view and the distant view collide and the doctrine appears in the wreckage.</li>
+    <li><a href="personas/doctrinal-connector.html">Our doctrinal connector</a> — How Restoration scripture reads these psalms back — Alma's shepherd interrogation, the JST's reversal of Psalm 24's gates, and D&amp;C 101 handing Psalm 46 to refugees.</li>
+    <li><a href="personas/practical-disciple.html">Our practical disciple</a> — The assignments hiding in the poems: two audits from Psalm 19, confession with a return address from Psalm 32, and stillness as a calendar problem.</li>
+  </ul>
+
+  <footer class="site">W Jamm · Utah, USA</footer>
+</div>
+</body>
+</html>
