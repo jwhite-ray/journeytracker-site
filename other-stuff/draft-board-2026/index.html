@@ -125,7 +125,6 @@ tbody td.name { cursor: help; }
 }
 .tip-row { display: flex; justify-content: space-between; gap: 1.2rem; }
 .tip-row .src { color: var(--ink-soft); }
-.tip-row .src .w { font-size: 0.68rem; opacity: 0.7; }
 .tip-row .rk { font-variant-numeric: tabular-nums; }
 .tip-row .rk.hi { color: #2c7a3f; font-weight: 700; }
 .tip-row .rk.lo { color: #b0483a; font-weight: 700; }
@@ -141,7 +140,7 @@ tbody td.name { cursor: help; }
   <nav class="site-nav"><a href="../">← Other Stuff</a></nav>
   <p class="kicker">Fantasy Football · PPR · August 28, 2026</p>
   <h1>2026 Draft Board</h1>
-  <p class="sub">A weighted consensus of 13 expert ranking boards (ESPN, PFF, Yahoo, FantasyPros, Draft Sharks, CBS, and more), collected the week of the draft. <strong>Dif</strong> is consensus rank minus ESPN's rank — negative means the room drafting off ESPN will probably let them fall to you. <strong>Pts/Wk</strong> is projected points per week over the best bench option at the position. Green <strong>★&nbsp;falls</strong> rows are potential steals: modeling the room as drafting in ESPN-rank order, these players should survive to one of my pick slots (7th position, 10-team snake) at least 10 board spots past their consensus value — the tag names the round they should fall to. <strong>Target</strong> tags (e.g. R3-1) are the draft plan from pick #7: the round to take the player and the order to check them off within that round — a player still available after their tagged round is a bonus. Mark players <strong>Mine</strong> or <strong>Taken</strong> as the draft unfolds — progress is saved on this device until you hit Reset.</p>
+  <p class="sub">A big board built from expert rankings around the industry, refreshed for draft week. <strong>Dif</strong> compares this board to ESPN's ranks. <strong>Pts/Wk</strong> is a projected weekly value score. Green <strong>★&nbsp;falls</strong> rows and <strong>Target</strong> tags mark players of particular interest. Mark players <strong>Mine</strong> or <strong>Taken</strong> as the draft unfolds — progress is saved on this device until you hit Reset.</p>
 
   <div class="toolbar">
     <input class="search" id="q" type="search" placeholder="Search players…" autocomplete="off">
@@ -163,7 +162,7 @@ tbody td.name { cursor: help; }
     </table>
   </div>
 
-  <p class="methodnote">Missing values (—) mean that source doesn't rank the player. Built from a weighted average of 13 boards with accuracy-based weights and midpoint imputation for unranked players. 2025 keepers are excluded from the pool: Cam Skattebo, Jameson Williams, DeVonta Smith, George Pickens, Javonte Williams, Chris Olave, Caleb Williams, and Tyler Warren.</p>
+  <p class="methodnote">Missing values (—) mean that source doesn't rank the player. 2025 keepers are excluded from the pool: Cam Skattebo, Jameson Williams, DeVonta Smith, George Pickens, Javonte Williams, Chris Olave, Caleb Williams, and Tyler Warren.</p>
 
   <footer class="site">W Jamm · Utah, USA</footer>
 </div>
@@ -183,12 +182,9 @@ const COLS = [
 const GROUPS = ["All", "QB", "RB", "WR", "TE", "Flex", "K", "DST"];
 const FLEX = new Set(["RB", "WR", "TE"]);
 const STORE_KEY = "wjamm-draft-2026";
-// weight-descending; must match the order of each player's `sr` array
-const SOURCES = [
-  ["Draft Sharks", 1.2], ["FantasyPros", 1.2], ["Yahoo", 1.15], ["FTN", 1.15],
-  ["FFC ADP", 1.1], ["PFF", 1.0], ["FFToday", 1.0], ["Sports Illustrated", 1.0],
-  ["ESPN", 0.9], ["CBS", 0.9], ["NBC", 0.85], ["RotoWire", 0.85], ["PFN", 0.8],
-];
+// must match the order of each player's `sr` array
+const SOURCES = ["Draft Sharks", "FantasyPros", "Yahoo", "FTN", "FFC ADP", "PFF",
+  "FFToday", "Sports Illustrated", "ESPN", "CBS", "NBC", "RotoWire", "PFN"];
 
 let sortKey = "r", sortDir = 1, group = "All", query = "", view = "board";
 let mine = new Set(), taken = new Set(), actions = [];
@@ -324,10 +320,10 @@ function showTip(cell) {
   if (!p || !p.sr) return;
   const real = p.sr.filter(v => v !== null);
   const best = Math.min(...real), worst = Math.max(...real);
-  tip.innerHTML = `<h4>${p.n} — source ranks</h4>` + SOURCES.map(([label, w], i) => {
+  tip.innerHTML = `<h4>${p.n} — source ranks</h4>` + SOURCES.map((label, i) => {
     const v = p.sr[i];
     const cls = v === null ? "" : v === best ? " hi" : v === worst ? " lo" : "";
-    return `<div class="tip-row"><span class="src">${label} <span class="w">×${w}</span></span>` +
+    return `<div class="tip-row"><span class="src">${label}</span>` +
            `<span class="rk${cls}">${v === null ? "—" : v}</span></div>`;
   }).join("");
   const r = cell.getBoundingClientRect();
