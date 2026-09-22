@@ -23,6 +23,11 @@
   .move .line strong { color: var(--ink); }
   .alert { border-left: 3px solid var(--accent); padding: 0.3rem 0 0.3rem 1.1rem; margin: 1.25rem 0; }
   .stamp { color: var(--ink-soft); font-size: 0.85rem; }
+  .tbl tr.me td { background: var(--card); font-weight: 600; }
+  .pt { display: inline-block; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.06em;
+        padding: 0.1rem 0.34rem; border-radius: 4px; border: 1px solid var(--accent); color: var(--accent); }
+  .zero { color: var(--ink-soft); }
+  .sc { color: var(--ink-soft); font-size: 0.78rem; font-variant-numeric: tabular-nums; }
 </style>
 </head>
 <body>
@@ -30,7 +35,60 @@
   <nav class="site-nav"><a href="../">← Fantasy Football</a></nav>
   <p class="kicker">NUVI Alumni 2026</p>
   <h1>Week 3</h1>
-  <p class="sub">Team Whitehead · 1–1 · $85 FAAB remaining · roster full at 14/14 + 1 IR · Week 3 vs. Breaking Burrow (2–0)</p>
+  <p class="sub">Team Whitehead · 4th on points (3) · 1–1 with two top-five weeks · $85 FAAB remaining · roster full at 14/14 + 1 IR · Week 3 vs. Breaking Burrow (2–0)</p>
+
+  <h2>Standings</h2>
+  <p class="stamp">Through Week 2 · one point for winning your matchup, one point for finishing in the weekly top five · ties broken by total points for</p>
+
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr><th class="num">#</th><th>Team</th><th class="num">Pts</th><th class="num">Record</th><th class="num">Top 5</th><th class="num">Points For</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1</td><td>Team Jensen</td><td class="num"><strong>4</strong></td><td class="num">2–0</td><td class="num">2</td><td class="num">242.96</td></tr>
+      <tr><td class="num">2</td><td>Team Carvalho</td><td class="num"><strong>3</strong></td><td class="num">2–0</td><td class="num">1</td><td class="num">261.70</td></tr>
+      <tr><td class="num">3</td><td>Breaking Burrow</td><td class="num"><strong>3</strong></td><td class="num">2–0</td><td class="num">1</td><td class="num">233.84</td></tr>
+      <tr class="me"><td class="num">4</td><td>Team Whitehead</td><td class="num"><strong>3</strong></td><td class="num">1–1</td><td class="num">2</td><td class="num">232.28</td></tr>
+      <tr><td class="num">5</td><td>His Airdness</td><td class="num"><strong>2</strong></td><td class="num">1–1</td><td class="num">1</td><td class="num">248.78</td></tr>
+      <tr><td class="num">6</td><td>Team Lackey</td><td class="num"><strong>2</strong></td><td class="num">1–1</td><td class="num">1</td><td class="num">230.18</td></tr>
+      <tr><td class="num">7</td><td>Team Carnahan</td><td class="num"><strong>1</strong></td><td class="num">0–2</td><td class="num">1</td><td class="num">224.34</td></tr>
+      <tr><td class="num">8</td><td>Cee Deez Nuts</td><td class="num"><strong>1</strong></td><td class="num">0–2</td><td class="num">1</td><td class="num">223.22</td></tr>
+      <tr><td class="num">9</td><td>Team Stowell</td><td class="num"><strong>1</strong></td><td class="num">1–1</td><td class="num">0</td><td class="num">210.46</td></tr>
+      <tr><td class="num">10</td><td>Bijan Mustard</td><td class="num"><strong>0</strong></td><td class="num">0–2</td><td class="num">0</td><td class="num">167.20</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>How the points were earned</h3>
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr><th>Team</th><th class="num">Wk 1</th><th class="num">Wk 2</th><th class="num">Total</th></tr></thead>
+    <tbody>
+      <tr><td>Team Jensen</td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">132.16</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">110.80</span></td><td class="num"><strong>4</strong></td></tr>
+      <tr><td>Team Carvalho</td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">153.00</span></td><td class="num"><span class="pt">W</span><br><span class="sc">108.70</span></td><td class="num"><strong>3</strong></td></tr>
+      <tr><td>Breaking Burrow</td><td class="num"><span class="pt">W</span><br><span class="sc">108.96</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">124.88</span></td><td class="num"><strong>3</strong></td></tr>
+      <tr class="me"><td>Team Whitehead</td><td class="num"><span class="pt">T5</span><br><span class="sc">118.06</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">114.22</span></td><td class="num"><strong>3</strong></td></tr>
+      <tr><td>His Airdness</td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">150.12</span></td><td class="num"><span class="zero">—</span><br><span class="sc">98.66</span></td><td class="num"><strong>2</strong></td></tr>
+      <tr><td>Team Lackey</td><td class="num"><span class="zero">—</span><br><span class="sc">86.98</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">143.20</span></td><td class="num"><strong>2</strong></td></tr>
+      <tr><td>Team Carnahan</td><td class="num"><span class="pt">T5</span><br><span class="sc">129.52</span></td><td class="num"><span class="zero">—</span><br><span class="sc">94.82</span></td><td class="num"><strong>1</strong></td></tr>
+      <tr><td>Cee Deez Nuts</td><td class="num"><span class="zero">—</span><br><span class="sc">114.20</span></td><td class="num"><span class="pt">T5</span><br><span class="sc">109.02</span></td><td class="num"><strong>1</strong></td></tr>
+      <tr><td>Team Stowell</td><td class="num"><span class="pt">W</span><br><span class="sc">110.10</span></td><td class="num"><span class="zero">—</span><br><span class="sc">100.36</span></td><td class="num"><strong>1</strong></td></tr>
+      <tr><td>Bijan Mustard</td><td class="num"><span class="zero">—</span><br><span class="sc">81.32</span></td><td class="num"><span class="zero">—</span><br><span class="sc">85.88</span></td><td class="num"><strong>0</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="stamp"><span class="pt">W</span> matchup win · <span class="pt">T5</span> top-five scoring week · score shown beneath</p>
+
+  <h3>The weekly top-five cut line</h3>
+  <ul>
+    <li><strong>Week 1</strong> — cut line 118.06 (6th place scored 114.20, a 3.86-point miss): Team Carvalho 153.00, His Airdness 150.12, Team Jensen 132.16, Team Carnahan 129.52, Team Whitehead 118.06</li>
+    <li><strong>Week 2</strong> — cut line 109.02 (6th place scored 108.70, a 0.32-point miss): Team Lackey 143.20, Breaking Burrow 124.88, Team Whitehead 114.22, Team Jensen 110.80, Cee Deez Nuts 109.02</li>
+  </ul>
+
+  <h3>What the table says</h3>
+  <p>The two-point system rewards a very different team than a straight win-loss record does, and Team Whitehead is currently on the right side of that. <strong>Justin is 1–1 but tied for second in points</strong>, because he has the only pair of top-five scoring weeks in the league outside of Team Jensen. A 1–1 record is 9th-best; 3 points is 4th.</p>
+  <p>Team Stowell is the mirror image and the cautionary tale: also 1–1, but zero top-five weeks, so they sit on a single point, tied with two 0–2 teams. <strong>Consistent mid-range scoring is worth almost nothing here.</strong> His Airdness has the second-most points for in the league (248.78) and only 2 points, because 150.12 and 98.66 averages out fine and cashes in only once.</p>
+  <p><strong>The cut line is the number to watch, and it moved a lot.</strong> Week 1 required 118.06 to make the top five. Week 2 required 109.02 — and sixth place missed by <strong>0.32 points</strong>. That margin is the practical argument for treating every FLEX decision as live: in this format, three points of lineup optimization is a real chance at a full standings point, which a head-to-head blowout win never gives you.</p>
+  <p>Scoring format note: through <strong>Week 9</strong>, every team plays every other team once and both points are live (matchup win + top five, maximum two per week). The schedule confirms the round robin completes exactly at Week 9. From <strong>Week 10</strong> the matchups stop counting and the weekly top five earns two points each.</p>
 
   <!-- ===== TUESDAY WAIVER REPORT ===== -->
   <h2>Waiver Report (Tuesday)</h2>
