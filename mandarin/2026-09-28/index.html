@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>这周的作业 · Week of Sep 28 — Mandarin Tutor</title>
+<meta name="description" content="Weekly homework practice: Chinese character flashcards with speaking practice, a 30-second subtraction challenge, and a multiplication activity.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../mandarin.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="site-nav" lang="en"><a href="../">← Mandarin Tutor</a></nav>
+  <p class="kicker" lang="en">Week of September 28, 2026</p>
+  <h1><span class="zh">这周的作业</span><span class="en" lang="en">This week's homework</span></h1>
+
+  <div class="tasks" id="tasks" lang="en"></div>
+  <p class="more-links" lang="en">More practice on Quizlet:
+    <a href="https://quizlet.com/49762603/100-chinese-common-words-vol1-1-flash-cards/" rel="noopener" target="_blank">Set 1</a>
+    <a href="https://quizlet.com/49763019/100-chinese-common-words-vol1-2-flash-cards/" rel="noopener" target="_blank">Set 2</a>
+    <a href="https://quizlet.com/49763336/100-chinese-common-words-vol1-3-flash-cards/" rel="noopener" target="_blank">Set 3</a>
+  </p>
+
+  <h2 id="chars"><span class="zh">汉字</span><span class="en" lang="en">Characters</span></h2>
+  <div class="grid-bar">
+    <button class="chip" data-filter="all" aria-pressed="true"><span class="zh">全部</span><span class="n"></span></button>
+    <button class="chip" data-filter="learning" aria-pressed="false"><span class="zh">还在学</span><span class="n"></span></button>
+    <button class="chip" data-filter="done" aria-pressed="false"><span class="zh">会了</span><span class="n"></span></button>
+    <span class="spacer"></span>
+    <button class="chip" id="shuffle" aria-pressed="false" aria-label="Shuffle"></button>
+  </div>
+  <div class="char-grid" id="char-grid"></div>
+  <div class="legend" lang="en">
+    <span><i class="sw"></i>Not yet</span>
+    <span><i class="sw learning"></i>Still learning</span>
+    <span><i class="sw done"></i>Done — mic: the app heard her · hand: she checked it herself</span>
+  </div>
+  <p class="notice" id="notice" lang="en" hidden></p>
+
+  <h2 id="drill"><span class="zh">减法挑战</span><span class="en" lang="en">30-second challenge</span></h2>
+  <div class="drill" id="drill-box" lang="en"></div>
+
+  <p class="parent" lang="en">Progress is saved on this device only. <button id="reset">Reset progress</button></p>
+  <footer class="site" lang="en"><a href="https://wjamm.com/">W Jamm</a> · Mandarin Tutor</footer>
+</div>
+
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="Flashcard" hidden>
+  <div class="ov-top">
+    <button class="round" id="close" aria-label="Close"></button>
+    <span class="count" id="count"></span>
+    <span style="width:56px"></span>
+  </div>
+  <div class="stage" id="stage">
+    <div class="card" id="card">
+      <div class="face front">
+        <div class="big" id="front-char"></div>
+        <span class="flip-hint" id="flip-hint"></span>
+      </div>
+      <div class="face back">
+        <div class="mid" id="back-char"></div>
+        <div class="py" id="back-py"></div>
+        <div class="en" id="back-en" lang="en"></div>
+        <div class="built" id="back-built" lang="en"></div>
+        <div class="rad" id="back-rad"></div>
+      </div>
+    </div>
+  </div>
+  <div class="status" id="status" aria-live="polite"></div>
+  <div class="controls">
+    <button class="round" id="prev" aria-label="Previous"></button>
+    <button class="round" id="hear" aria-label="Hear it"></button>
+    <button class="mic" id="mic" aria-label="Say it"></button>
+    <button class="round" id="flip" aria-label="Flip card"></button>
+    <button class="round" id="next" aria-label="Next"></button>
+  </div>
+</div>
+
+<script type="application/json" id="week">
+{
+  "week": "2026-09-28",
+  "deck": "common-words-1",
+  "sheets": [1, 2, 3, 4, 5, 6, 7, 8],
+  "tasks": [
+    { "id": "chars", "type": "flashcards", "zh": "汉字", "en": "Review characters", "meta": "pages 1–16 — say each one" },
+    { "id": "subtraction", "type": "drill", "zh": "减法", "en": "Subtraction challenge", "meta": "30 seconds, a little every day", "days": 5 },
+    { "id": "pennies", "type": "activity", "zh": "乘法", "en": "Multiplication with pennies", "meta": "With a grown-up · about 10 minutes · 30 pennies and 4–6 cups",
+      "stepsLabel": "How to do it",
+      "steps": [
+        "Put 5 pennies in each of 4 cups. How many pennies in all?",
+        "Empty each cup into its own row. 4 rows of 5 is an array: 4 × 5 = 20.",
+        "Try more: 5 × 3, 2 × 4, and 3 × 6.",
+        "Look for groups at home, like 3 pairs of socks: 3 × 2 = 6."
+      ] }
+  ],
+  "drill": { "ops": ["-", "+"] }
+}
+</script>
+<script src="../decks/common-words-1.js"></script>
+<script src="../homework.js"></script>
+</body>
+</html>
