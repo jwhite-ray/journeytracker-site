@@ -146,6 +146,7 @@ footer.site a { color: var(--ink-soft); text-decoration: none; }
   padding: max(12px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom));
 }
 .overlay[hidden] { display: none; }
+.overlay { overflow-y: auto; }
 .ov-top { width: 100%; max-width: 40rem; display: flex; align-items: center; justify-content: space-between; min-height: 56px; }
 .round {
   width: 56px; height: 56px; border-radius: 50%; border: 2px solid var(--rule); background: var(--card);
@@ -243,6 +244,14 @@ footer.site a { color: var(--ink-soft); text-decoration: none; }
   .pad { grid-template-columns: repeat(3, 72px); }
   .problem { font-size: 2.8rem; }
   .char-grid { grid-template-columns: repeat(auto-fill, minmax(64px, 1fr)); }
+}
+@media (max-height: 600px) {
+  .card { min-height: 12rem; }
+  .face.front .big { font-size: 7rem; }
+  .face.back .mid { font-size: 2.4rem; }
+  .face.back .py { font-size: 2rem; }
+  .face.back .en { font-size: 1.15rem; }
+  .face.back .built { font-size: 0.95rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   .card { transition: none; }

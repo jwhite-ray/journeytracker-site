@@ -213,11 +213,17 @@
   function playBlob(blob) {
     return new Promise(function (resolve) {
       if (!blob) { resolve(false); return; }
-      var url = URL.createObjectURL(blob);
-      var done = function () { player.onended = player.onerror = null; resolve(true); };
+      var finished = false;
+      var done = function () {
+        if (finished) return;
+        finished = true;
+        player.onended = player.onerror = player.onpause = null;
+        resolve(true);
+      };
       player.onended = done;
       player.onerror = done;
-      player.src = url;
+      player.onpause = done;
+      player.src = URL.createObjectURL(blob);
       var p = player.play();
       if (p && p.catch) p.catch(function () { done(); });
       setTimeout(done, 6000);
@@ -238,33 +244,40 @@
     } catch (e) {}
   }
 
+  // Starts listening immediately — call it inside the tap, or iPad Safari may refuse.
+  // Returns { done: Promise<{texts}|{error}>, cancel() }.
   function recognize() {
-    return new Promise(function (resolve) {
-      var r;
-      try { r = new SR(); } catch (e) { resolve({ error: "unsupported" }); return; }
-      r.lang = "zh-CN";
-      r.interimResults = false;
-      r.continuous = false;
-      r.maxAlternatives = 5;
-      var finished = false;
-      var timer = setTimeout(function () { finish({ error: "no-speech" }); }, 7000);
-      function finish(v) {
-        if (finished) return;
-        finished = true;
-        clearTimeout(timer);
-        try { r.abort(); } catch (e) {}
-        resolve(v);
-      }
-      r.onresult = function (e) {
-        var texts = [];
-        for (var i = 0; i < e.results.length; i++)
-          for (var j = 0; j < e.results[i].length; j++) texts.push(e.results[i][j].transcript);
-        finish({ texts: texts });
-      };
-      r.onerror = function (e) { finish({ error: e.error || "error" }); };
-      r.onend = function () { finish({ error: "no-speech" }); };
-      try { r.start(); } catch (e) { finish({ error: "start-failed" }); }
-    });
+    var r, finished = false, timer = null, grace = null, resolveFn;
+    var done = new Promise(function (res) { resolveFn = res; });
+    function finish(v) {
+      if (finished) return;
+      finished = true;
+      clearTimeout(timer);
+      clearTimeout(grace);
+      try { if (r) r.abort(); } catch (e) {}
+      resolveFn(v);
+    }
+    var handle = { done: done, cancel: function () { finish({ error: "cancelled" }); } };
+    try { r = new SR(); } catch (e) { finish({ error: "unsupported" }); return handle; }
+    r.lang = "zh-CN";
+    r.interimResults = false;
+    r.continuous = false;
+    r.maxAlternatives = 5;
+    r.onresult = function (e) {
+      var texts = [];
+      for (var i = 0; i < e.results.length; i++)
+        for (var j = 0; j < e.results[i].length; j++) texts.push(e.results[i][j].transcript);
+      finish({ texts: texts });
+    };
+    r.onerror = function (e) { finish({ error: e.error || "error" }); };
+    r.onend = function () { finish({ error: "no-speech" }); };
+    // After 7s ask for whatever it heard (Safari may only deliver a result on stop), then give up.
+    timer = setTimeout(function () {
+      try { r.stop(); } catch (e) {}
+      grace = setTimeout(function () { finish({ error: "no-speech" }); }, 1500);
+    }, 7000);
+    try { r.start(); } catch (e) { finish({ error: "start-failed" }); }
+    return handle;
   }
 
   // A heard character counts if it IS the card, or sounds the same ignoring tone.
@@ -305,6 +318,8 @@
   }
   function closeCard() {
     clearTimeout(advanceTimer);
+    cancelAttempt();
+    try { player.pause(); } catch (e) {}
     try { speechSynthesis.cancel(); } catch (e) {}
     ov.hidden = true;
     document.body.style.overflow = "";
@@ -353,9 +368,9 @@
   });
 
   function go(d) {
-    if (busy) return;
     var n = idx + d;
     if (n < 0 || n >= list.length) return;
+    cancelAttempt();
     idx = n;
     showCard();
   }
@@ -376,7 +391,7 @@
     setTimeout(function () { b.remove(); }, 900);
   }
 
-  async function startRecorder(stream) {
+  function startRecorder(stream) {
     if (!window.MediaRecorder) return null;
     try {
       var chunks = [];
@@ -390,67 +405,120 @@
     } catch (e) { return null; }
   }
 
+  // Tracks the loudest moment of our copy of the mic, to notice a recording that came out silent.
+  function meter(stream, L) {
+    if (!actx) return;
+    try {
+      var src = actx.createMediaStreamSource(stream), an = actx.createAnalyser();
+      an.fftSize = 512;
+      src.connect(an);
+      var buf = new Float32Array(an.fftSize);
+      L.meterTimer = setInterval(function () {
+        an.getFloatTimeDomainData(buf);
+        for (var i = 0; i < buf.length; i++) { var v = Math.abs(buf[i]); if (v > L.peak) L.peak = v; }
+      }, 80);
+      L.metered = true;
+    } catch (e) {}
+  }
+
   function stopStream(stream) { if (stream) stream.getTracks().forEach(function (t) { t.stop(); }); }
+
+  var attemptId = 0, live = null, notAllowed = 0;
+
+  function micUI(on) {
+    micBtn.classList.toggle("listening", on);
+    micBtn.setAttribute("aria-label", on ? "Listening" : "Say it");
+  }
+
+  function releaseLive(L) {
+    if (!L) return;
+    clearInterval(L.meterTimer);
+    if (L.rec) L.rec.cancel();
+    if (L.recorder) L.recorder.stop();
+    stopStream(L.stream);
+    if (live === L) live = null;
+  }
+
+  // Stop listening right away (card closed, next card, or Hear tapped).
+  function cancelAttempt() {
+    if (!busy) return;
+    attemptId++;
+    releaseLive(live);
+    busy = false;
+    micUI(false);
+  }
 
   async function attempt() {
     if (busy) return;
-    var c = list[idx];
+    var c = list[idx], my = ++attemptId;
+    var stale = function () { return my !== attemptId; };
     clearTimeout(advanceTimer);
     busy = true;
-    micBtn.classList.add("listening");
-    micBtn.setAttribute("aria-label", "Listening");
+    micUI(true);
     setMsg("", '<span class="zh">请说</span><span>Say it now</span>');
+    try { player.pause(); } catch (e) {}
     try { speechSynthesis.cancel(); } catch (e) {}
+    lastBlob = null;
 
-    var canCheck = SR && !srBroken;
-    var stream = null, recorder = null;
+    var canCheck = !!SR && !srBroken;
+    var L = live = { rec: canCheck ? recognize() : null, stream: null, recorder: null, muted: false, peak: 0, metered: false };
+
+    var micOk = true;
     if (!canCheck || !noConcurrent) {
-      try { stream = await navigator.mediaDevices.getUserMedia({ audio: true }); }
-      catch (e) { return finishAttempt(c, { error: "mic-denied" }); }
-      recorder = await startRecorder(stream);
+      try {
+        L.stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        if (stale()) { stopStream(L.stream); return; }
+        L.stream.getAudioTracks().forEach(function (t) { t.onmute = t.onended = function () { L.muted = true; }; });
+        L.recorder = startRecorder(L.stream);
+        meter(L.stream, L);
+      } catch (e) { micOk = false; }
     }
 
-    if (!canCheck) {
-      await wait(2500);
-      lastBlob = recorder ? await recorder.stop() : null;
-      stopStream(stream);
-      return finishAttempt(c, { selfCheck: true });
-    }
+    var result;
+    if (!canCheck) result = micOk ? (await wait(2500), { selfCheck: true }) : { error: "mic-denied" };
+    else result = await L.rec.done;
+    if (stale()) return;
 
-    var result = await recognize();
-    if (recorder) lastBlob = await recorder.stop();
-    stopStream(stream);
-
-    // Some browsers can't share the mic between recording and recognition: retry without recording.
-    if (result.error === "audio-capture" && stream && !noConcurrent) {
-      noConcurrent = true;
-      lastBlob = null;
-      result = await recognize();
+    clearInterval(L.meterTimer);
+    if (L.recorder) {
+      var blob = await L.recorder.stop();
+      if (stale()) return;
+      // Some iPads hand the mic to the recognizer and our copy goes quiet. If she was heard but the
+      // recording is silent, stop recording alongside recognition from now on.
+      var silent = L.muted || !blob || blob.size < 1000 || (L.metered && L.peak < 0.01);
+      if (canCheck && result.texts && silent) noConcurrent = true;
+      lastBlob = silent ? null : blob;
     }
+    stopStream(L.stream);
+    if (live === L) live = null;
+    if (canCheck && result.error === "not-allowed" && !micOk) result = { error: "mic-denied" };
     finishAttempt(c, result);
   }
 
   function finishAttempt(c, result) {
     busy = false;
-    micBtn.classList.remove("listening");
-    micBtn.setAttribute("aria-label", "Say it");
-    if (c !== list[idx] || ov.hidden) return;
+    micUI(false);
+    if (c !== list[idx] || ov.hidden || result.error === "cancelled") return;
+    var tryAgain = "<span>Tap the microphone and try again.</span>";
 
     if (result.error === "mic-denied") {
       setMsg("err", '<span class="zh">麦克风关了</span><span>The microphone is off. Ask a grown-up to allow it.</span>');
       return;
     }
-    if (result.error === "not-allowed" || result.error === "service-not-allowed" || result.error === "unsupported" || result.error === "start-failed") {
-      // The mic works but recognition is off (on iPad: Dictation). Fall back to listen-and-compare.
+    if (result.error === "not-allowed" || result.error === "start-failed") notAllowed++;
+    if (result.error === "service-not-allowed" || result.error === "unsupported" || notAllowed >= 2) {
+      // Recognition itself is off (on iPad: Dictation). Fall back to listen-and-compare.
       srBroken = true;
-      showNotice("Speech checking is off on this device, so she'll compare her voice with the teacher's and decide. On iPad, a grown-up can turn on Settings → General → Keyboard → Enable Dictation, then reload.");
-      setMsg("try", "<span>Tap the microphone and try again.</span>");
+      showNotice("Speech checking isn't working on this device, so she'll compare her voice with the teacher's and decide. On iPad, a grown-up can check Settings → General → Keyboard → Enable Dictation, then reload.");
+      setMsg("try", tryAgain);
       return;
     }
+    if (result.error === "not-allowed" || result.error === "start-failed") { setMsg("try", tryAgain); return; }
+    if (result.error === "audio-capture") { noConcurrent = true; setMsg("try", tryAgain); return; }
     if (result.error === "network") {
       srBroken = true;
       showNotice("Speech checking needs an internet connection. Until it's back, she'll compare her voice with the teacher's and decide.");
-      setMsg("try", '<span>Tap the microphone and try again.</span>');
+      setMsg("try", tryAgain);
       return;
     }
     if (result.error) {
@@ -460,8 +528,7 @@
 
     if (result.selfCheck) { compare(c, null); return; }
 
-    var hit = heardMatch(result.texts, c);
-    if (hit) {
+    if (heardMatch(result.texts, c)) {
       setStatus(c, "done", "heard");
       cardEl.classList.add("is-done");
       cardEl.classList.remove("is-learning");
@@ -476,6 +543,7 @@
 
   // Not a match (or no checking available): play her voice, then the teacher's. Never "wrong".
   async function compare(c, heard) {
+    var my = attemptId;
     var html = '<span class="zh">再听一听</span>';
     if (heard) html += '<span style="font-weight:400;font-size:0.95rem">I heard <span class="zh" style="font-size:1.1rem">' + heard + "</span></span>";
     html += '<div class="row">';
@@ -485,7 +553,7 @@
     html += "</div>";
     setMsg("try", html);
     if (lastBlob) { await playBlob(lastBlob); await wait(300); }
-    if (c === list[idx] && !ov.hidden && !busy) await say(c.c);
+    if (my === attemptId && c === list[idx] && !ov.hidden && !busy) await say(c.c);
   }
 
   function showNotice(text) {
@@ -496,11 +564,13 @@
 
   micBtn.addEventListener("click", function () { unlockAudio(); attempt(); });
   $("#hear").addEventListener("click", function () {
+    cancelAttempt();  // never let the recognizer hear the teacher's voice
     unlockAudio();
     if (!("speechSynthesis" in window)) { setMsg("err", "<span>This browser can't speak Chinese out loud.</span>"); return; }
     if (!zhVoice) pickVoice();
     say(list[idx].c).then(function (ok) {
-      if (!ok || !zhVoice) setMsg("err", "<span>No Chinese voice found. On iPad: Settings → Accessibility → Spoken Content → Voices → Chinese.</span>");
+      var voicesLoaded = speechSynthesis.getVoices().length > 0;
+      if (!ok || (voicesLoaded && !zhVoice)) setMsg("err", "<span>No Chinese voice found. On iPad: Settings → Accessibility → Spoken Content → Voices → Chinese.</span>");
     });
   });
   $("#flip").addEventListener("click", function () { cardEl.classList.toggle("flipped"); });
@@ -664,6 +734,7 @@
   // ---------- parent reset ----------
   $("#reset").addEventListener("click", function () {
     if (!confirm("Clear all flashcard and drill progress on this device?")) return;
+    if (round) { clearInterval(round.tick); round = null; }
     progress = {}; weekState = { manual: {} }; drillState = { best: {}, days: {} };
     store.set(PKEY, progress); store.set(WKEY, weekState); store.set(DKEY, drillState);
     renderTasks(); renderGrid(); renderDrillSetup();

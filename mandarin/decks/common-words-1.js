@@ -39,7 +39,7 @@ window.MANDARIN_DECKS["common-words-1"] = {
     { c: "爱", py: "ài", s: ["ai"], en: "love", rad: "爪 claw", built: "爪 hand + 冖 cover + 友 friend", sheet: 3 },
     { c: "叫", py: "jiào", s: ["jiao"], en: "call, be called", rad: "口 mouth", built: "口 mouth + 丩 for the sound", sheet: 3 },
 
-    { c: "去", py: "qù", s: ["qu"], en: "go", rad: "厶 private", built: "A person 土 leaving 厶 a place", sheet: 4 },
+    { c: "去", py: "qù", s: ["qu"], en: "go", rad: "厶 private", built: "Made of 土 on top and 厶 below", sheet: 4 },
     { c: "来", py: "lái", s: ["lai"], en: "come", rad: "木 tree", built: "A picture of a wheat plant", sheet: 4 },
     { c: "现", py: "xiàn", s: ["xian"], en: "now, appear", rad: "王 jade", built: "王 jade + 见 see, for the sound", sheet: 4 },
     { c: "怎", py: "zěn", s: ["zen"], en: "how", rad: "心 heart", built: "心 heart + 乍 for the sound", sheet: 4 },
@@ -48,7 +48,7 @@ window.MANDARIN_DECKS["common-words-1"] = {
     { c: "好", py: "hǎo", s: ["hao"], en: "good", rad: "女 woman", built: "女 woman + 子 child", sheet: 4 },
     { c: "了", py: "le", s: ["le", "liao"], en: "(finished)", rad: "亅 hook", built: "A child 子 with no arms", sheet: 4 },
     { c: "吗", py: "ma", s: ["ma"], en: "(question word)", rad: "口 mouth", built: "口 mouth + 马 horse, for the sound", sheet: 4 },
-    { c: "是", py: "shì", s: ["shi"], en: "is, am, are; yes", rad: "日 sun", built: "曰 speak + 正 straight — telling it right", sheet: 4 },
+    { c: "是", py: "shì", s: ["shi"], en: "is, am, are; yes", rad: "日 sun", built: "日 sun over 正 straight — as right as the sun", sheet: 4 },
 
     { c: "什", py: "shén", s: ["shen", "shi"], en: "what (什么)", rad: "亻 person", built: "亻 person + 十 ten, for the sound", sheet: 5 },
     { c: "么", py: "me", s: ["me", "ma"], en: "what (什么)", rad: "丿 slash", built: "The simple form of 麼", sheet: 5 },
@@ -89,7 +89,7 @@ window.MANDARIN_DECKS["common-words-1"] = {
     { c: "们", py: "men", s: ["men"], en: "(more than one)", rad: "亻 person", built: "亻 person + 门 door, for the sound", sheet: 8 },
     { c: "号", py: "hào", s: ["hao"], en: "number, date", rad: "口 mouth", built: "口 mouth + 丂 — the simple form of 號", sheet: 8 },
     { c: "年", py: "nián", s: ["nian"], en: "year", rad: "干 dry", built: "A person carrying 禾 grain at harvest, once a year", sheet: 8 },
-    { c: "今", py: "jīn", s: ["jin"], en: "today, now", rad: "人 person", built: "A mouth talking about things happening now", sheet: 8 },
+    { c: "今", py: "jīn", s: ["jin"], en: "today, now", rad: "人 person", built: "Made of 亼 on top and フ below", sheet: 8 },
     { c: "明", py: "míng", s: ["ming"], en: "bright; next", rad: "日 sun", built: "日 sun + 月 moon — very bright", sheet: 8 },
     { c: "后", py: "hòu", s: ["hou"], en: "after, behind", rad: "口 mouth", built: "A person bending forward to orders from 口 a mouth", sheet: 8 },
     { c: "昨", py: "zuó", s: ["zuo"], en: "yesterday", rad: "日 sun", built: "日 day + 乍 for the sound", sheet: 8 },
