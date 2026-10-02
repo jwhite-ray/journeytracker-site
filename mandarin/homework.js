@@ -210,6 +210,7 @@
     });
   }
 
+  var blobUrl = null;
   function playBlob(blob) {
     return new Promise(function (resolve) {
       if (!blob) { resolve(false); return; }
@@ -223,7 +224,9 @@
       player.onended = done;
       player.onerror = done;
       player.onpause = done;
-      player.src = URL.createObjectURL(blob);
+      if (blobUrl) URL.revokeObjectURL(blobUrl);
+      blobUrl = URL.createObjectURL(blob);
+      player.src = blobUrl;
       var p = player.play();
       if (p && p.catch) p.catch(function () { done(); });
       setTimeout(done, 6000);
@@ -371,6 +374,8 @@
     var n = idx + d;
     if (n < 0 || n >= list.length) return;
     cancelAttempt();
+    try { player.pause(); } catch (e) {}
+    try { speechSynthesis.cancel(); } catch (e) {}
     idx = n;
     showCard();
   }
@@ -407,7 +412,7 @@
 
   // Tracks the loudest moment of our copy of the mic, to notice a recording that came out silent.
   function meter(stream, L) {
-    if (!actx) return;
+    if (!actx || actx.state !== "running") return;
     try {
       var src = actx.createMediaStreamSource(stream), an = actx.createAnalyser();
       an.fftSize = 512;
@@ -423,7 +428,7 @@
 
   function stopStream(stream) { if (stream) stream.getTracks().forEach(function (t) { t.stop(); }); }
 
-  var attemptId = 0, live = null, notAllowed = 0;
+  var attemptId = 0, live = null, notAllowed = 0, silentStrikes = 0;
 
   function micUI(on) {
     micBtn.classList.toggle("listening", on);
@@ -485,8 +490,10 @@
       if (stale()) return;
       // Some iPads hand the mic to the recognizer and our copy goes quiet. If she was heard but the
       // recording is silent, stop recording alongside recognition from now on.
-      var silent = L.muted || !blob || blob.size < 1000 || (L.metered && L.peak < 0.01);
-      if (canCheck && result.texts && silent) noConcurrent = true;
+      var silent = L.muted || !blob || blob.size < 1000 ||
+        (L.metered && actx && actx.state === "running" && L.peak < 0.01);
+      if (canCheck && result.texts) silentStrikes = silent ? silentStrikes + 1 : 0;
+      if (silentStrikes >= 2) noConcurrent = true;
       lastBlob = silent ? null : blob;
     }
     stopStream(L.stream);
@@ -527,6 +534,7 @@
     }
 
     if (result.selfCheck) { compare(c, null); return; }
+    notAllowed = 0;
 
     if (heardMatch(result.texts, c)) {
       setStatus(c, "done", "heard");

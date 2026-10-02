@@ -246,6 +246,7 @@ footer.site a { color: var(--ink-soft); text-decoration: none; }
   .char-grid { grid-template-columns: repeat(auto-fill, minmax(64px, 1fr)); }
 }
 @media (max-height: 600px) {
+  .stage { flex: 0 0 auto; min-height: 13rem; }
   .card { min-height: 12rem; }
   .face.front .big { font-size: 7rem; }
   .face.back .mid { font-size: 2.4rem; }
