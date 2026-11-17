@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 11 — Fantasy Football — W Jamm</title>
+<meta name="description" content="NUVI Alumni 2026, Week 11: points standings through Week 10, waiver report, FAAB market read, and ranked roster moves for Team Whitehead.">
+<link rel="stylesheet" href="../../cfm/cfm.css">
+<style>
+  .tbl { width: 100%; border-collapse: collapse; margin: 1rem 0 1.25rem; font-size: 0.93rem; }
+  .tbl th, .tbl td { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  .tbl th { color: var(--ink-soft); font-size: 0.78rem; letter-spacing: 0.07em; text-transform: uppercase; font-weight: 700; }
+  .tbl td.num, .tbl th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .tag { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
+         text-transform: uppercase; padding: 0.15rem 0.5rem; border-radius: 999px;
+         border: 1px solid var(--rule); color: var(--ink-soft); white-space: nowrap; }
+  .tag.hi { color: var(--accent); border-color: var(--accent); }
+  .move { border: 1px solid var(--rule); border-radius: 12px; background: var(--card);
+          padding: 1.2rem 1.4rem; margin: 1.25rem 0; }
+  .move h3 { margin-top: 0; }
+  .move .line { color: var(--ink-soft); font-size: 0.9rem; margin-bottom: 0.9rem; }
+  .move .line strong { color: var(--ink); }
+  .alert { border-left: 3px solid var(--accent); padding: 0.3rem 0 0.3rem 1.1rem; margin: 1.25rem 0; }
+  .stamp { color: var(--ink-soft); font-size: 0.85rem; }
+  .pt { display: inline-block; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.06em;
+        padding: 0.1rem 0.34rem; border-radius: 4px; border: 1px solid var(--accent); color: var(--accent); }
+  .zero { color: var(--ink-soft); }
+  .sc { color: var(--ink-soft); font-size: 0.78rem; font-variant-numeric: tabular-nums; }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <nav class="site-nav"><a href="../">← Fantasy Football</a></nav>
+  <p class="kicker">NUVI Alumni 2026</p>
+  <h1>Week 11</h1>
+  <p class="sub">Team Whitehead · 6 points, 9th in the standings · three top-five weeks · 1,055.46 points for · $70 FAAB remaining · waiver priority 5th of 10 · Tyson is still in the IR slot, so no claim can process until that's fixed · 14 points (seven weeks × 2) still on the table</p>
+
+  <h2>Standings</h2>
+  <p class="stamp">Through Week 10 · Weeks 1–9: one point for winning your matchup, one point for a weekly top-five score · from Week 10: 2 points per top-five finish, and matchups no longer count · ties broken by total points for · computed from every team's weekly score on the ESPN API</p>
+
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr><th class="num">#</th><th>Team</th><th class="num">Pts</th><th class="num">Record (Wk 1–9)</th><th class="num">Top 5</th><th class="num">Points For</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1</td><td>Team Jensen</td><td class="num"><strong>17</strong></td><td class="num">7–2</td><td class="num">9</td><td class="num">1250.76</td></tr>
+      <tr><td class="num">2</td><td>Chuban Missles</td><td class="num"><strong>15</strong></td><td class="num">6–3</td><td class="num">8</td><td class="num">1379.48</td></tr>
+      <tr><td class="num">3</td><td>Team Carvalho</td><td class="num"><strong>13</strong></td><td class="num">7–2</td><td class="num">5</td><td class="num">1221.24</td></tr>
+      <tr><td class="num">4</td><td>His Airdness</td><td class="num"><strong>12</strong></td><td class="num">5–4</td><td class="num">6</td><td class="num">1211.28</td></tr>
+      <tr><td class="num">5</td><td>Team Stowell</td><td class="num"><strong>12</strong></td><td class="num">5–4</td><td class="num">6</td><td class="num">1157.46</td></tr>
+      <tr><td class="num">6</td><td>Team Lackey</td><td class="num"><strong>10</strong></td><td class="num">5–4</td><td class="num">5</td><td class="num">1156.28</td></tr>
+      <tr><td class="num">7</td><td>Team Carnahan</td><td class="num"><strong>8</strong></td><td class="num">4–5</td><td class="num">4</td><td class="num">1171.42</td></tr>
+      <tr><td class="num">8</td><td>Cee Deez Nuts</td><td class="num"><strong>7</strong></td><td class="num">3–6</td><td class="num">4</td><td class="num">1117.46</td></tr>
+      <tr><td class="num">9</td><td>Team Whitehead</td><td class="num"><strong>6</strong></td><td class="num">3–6</td><td class="num">3</td><td class="num">1055.46</td></tr>
+      <tr><td class="num">10</td><td>This Sucks</td><td class="num"><strong>0</strong></td><td class="num">0–9</td><td class="num">0</td><td class="num">914.50</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>How the points were earned</h3>
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr><th>Team</th><th class="num">Wk 1</th><th class="num">Wk 2</th><th class="num">Wk 3</th><th class="num">Wk 4</th><th class="num">Wk 5</th><th class="num">Wk 6</th><th class="num">Wk 7</th><th class="num">Wk 8</th><th class="num">Wk 9</th><th class="num">Wk 10</th><th class="num">Total</th></tr></thead>
+    <tbody>
+      <tr><td>Team Jensen</td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">132.16</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">110.80</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">137.44</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">112.48</span></td><td class="num"><span class="pt">T5</span><br><span class="sc">136.76</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">123.46</span></td><td class="num"><span class="pt">T5</span><br><span class="sc">122.42</span></td><td class="num"><span class="pt">W</span><br><span class="sc">106.10</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">138.78</span></td><td class="num"><span class="pt">T5 ×2</span><br><span class="sc">130.36</span></td><td class="num"><strong>17</strong></td></tr>
+      <tr><td>Chuban Missles</td><td class="num"><span class="pt">W</span><br><span class="sc">108.96</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">124.88</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">133.90</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">172.94</span></td><td class="num"><span class="zero">—</span><br><span class="sc">124.00</span></td><td class="num"><span class="pt">T5</span><br><span class="sc">110.86</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">146.28</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">187.18</span></td><td class="num"><span class="pt">T5</span><br><span class="sc">134.52</span></td><td class="num"><span class="pt">T5 ×2</span><br><span class="sc">135.96</span></td><td class="num"><strong>15</strong></td></tr>
+      <tr><td>Team Carvalho</td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">153.00</span></td><td class="num"><span class="pt">W</span><br><span class="sc">108.70</span></td><td class="num"><span class="zero">—</span><br><span class="sc">88.86</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">128.58</span></td><td class="num"><span class="pt">W</span><br><span class="sc">128.04</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">138.70</span></td><td class="num"><span class="pt">W</span><br><span class="sc">110.32</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">115.98</span></td><td class="num"><span class="zero">—</span><br><span class="sc">95.80</span></td><td class="num"><span class="pt">T5 ×2</span><br><span class="sc">153.26</span></td><td class="num"><strong>13</strong></td></tr>
+      <tr><td>His Airdness</td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">150.12</span></td><td class="num"><span class="zero">—</span><br><span class="sc">98.66</span></td><td class="num"><span class="zero">—</span><br><span class="sc">101.04</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">130.90</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">135.26</span></td><td class="num"><span class="zero">—</span><br><span class="sc">79.38</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">122.12</span></td><td class="num"><span class="zero">—</span><br><span class="sc">107.60</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">106.28</span></td><td class="num"><span class="pt">T5 ×2</span><br><span class="sc">179.92</span></td><td class="num"><strong>12</strong></td></tr>
+      <tr><td>Team Stowell</td><td class="num"><span class="pt">W</span><br><span class="sc">110.10</span></td><td class="num"><span class="zero">—</span><br><span class="sc">100.36</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">125.84</span></td><td class="num"><span class="zero">—</span><br><span class="sc">97.60</span></td><td class="num"><span class="zero">—</span><br><span class="sc">107.94</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">118.12</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">123.78</span></td><td class="num"><span class="pt">T5</span><br><span class="sc">113.30</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">120.00</span></td><td class="num"><span class="pt">T5 ×2</span><br><span class="sc">140.42</span></td><td class="num"><strong>12</strong></td></tr>
+      <tr><td>Team Lackey</td><td class="num"><span class="zero">—</span><br><span class="sc">86.98</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">143.20</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">136.74</span></td><td class="num"><span class="zero">—</span><br><span class="sc">96.98</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">130.68</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">114.24</span></td><td class="num"><span class="zero">—</span><br><span class="sc">116.26</span></td><td class="num"><span class="zero">—</span><br><span class="sc">107.32</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">134.98</span></td><td class="num"><span class="zero">—</span><br><span class="sc">88.90</span></td><td class="num"><strong>10</strong></td></tr>
+      <tr><td>Team Carnahan</td><td class="num"><span class="pt">T5</span><br><span class="sc">129.52</span></td><td class="num"><span class="zero">—</span><br><span class="sc">94.82</span></td><td class="num"><span class="zero">—</span><br><span class="sc">100.36</span></td><td class="num"><span class="pt">T5</span><br><span class="sc">124.48</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">164.16</span></td><td class="num"><span class="pt">W</span><br><span class="sc">110.60</span></td><td class="num"><span class="zero">—</span><br><span class="sc">115.44</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">107.96</span></td><td class="num"><span class="pt">W</span><br><span class="sc">102.66</span></td><td class="num"><span class="zero">—</span><br><span class="sc">121.42</span></td><td class="num"><strong>8</strong></td></tr>
+      <tr><td>Cee Deez Nuts</td><td class="num"><span class="zero">—</span><br><span class="sc">114.20</span></td><td class="num"><span class="pt">T5</span><br><span class="sc">109.02</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">134.20</span></td><td class="num"><span class="zero">—</span><br><span class="sc">108.38</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">154.62</span></td><td class="num"><span class="zero">—</span><br><span class="sc">93.88</span></td><td class="num"><span class="zero">—</span><br><span class="sc">91.00</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">119.78</span></td><td class="num"><span class="zero">—</span><br><span class="sc">87.92</span></td><td class="num"><span class="zero">—</span><br><span class="sc">104.46</span></td><td class="num"><strong>7</strong></td></tr>
+      <tr><td>Team Whitehead</td><td class="num"><span class="pt">T5</span><br><span class="sc">118.06</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">114.22</span></td><td class="num"><span class="zero">—</span><br><span class="sc">84.26</span></td><td class="num"><span class="pt">W</span><br><span class="sc">109.42</span></td><td class="num"><span class="zero">—</span><br><span class="sc">115.00</span></td><td class="num"><span class="zero">—</span><br><span class="sc">95.60</span></td><td class="num"><span class="pt">W</span> <span class="pt">T5</span><br><span class="sc">148.08</span></td><td class="num"><span class="zero">—</span><br><span class="sc">98.56</span></td><td class="num"><span class="zero">—</span><br><span class="sc">72.56</span></td><td class="num"><span class="zero">—</span><br><span class="sc">99.70</span></td><td class="num"><strong>6</strong></td></tr>
+      <tr><td>This Sucks</td><td class="num"><span class="zero">—</span><br><span class="sc">81.32</span></td><td class="num"><span class="zero">—</span><br><span class="sc">85.88</span></td><td class="num"><span class="zero">—</span><br><span class="sc">102.84</span></td><td class="num"><span class="zero">—</span><br><span class="sc">110.26</span></td><td class="num"><span class="zero">—</span><br><span class="sc">96.90</span></td><td class="num"><span class="zero">—</span><br><span class="sc">83.24</span></td><td class="num"><span class="zero">—</span><br><span class="sc">79.72</span></td><td class="num"><span class="zero">—</span><br><span class="sc">57.86</span></td><td class="num"><span class="zero">—</span><br><span class="sc">89.54</span></td><td class="num"><span class="zero">—</span><br><span class="sc">126.94</span></td><td class="num"><strong>0</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Weekly top-five cut line</h3>
+  <ul>
+    <li><strong>Week 1</strong>: cut line 118.06. Sixth place (Cee Deez Nuts) scored 114.20, a 3.86-point miss. Top five: Team Carvalho 153.00, His Airdness 150.12, Team Jensen 132.16, Team Carnahan 129.52, Team Whitehead 118.06.</li>
+    <li><strong>Week 2</strong>: cut line 109.02. Sixth place (Team Carvalho) scored 108.70, a <strong>0.32-point miss</strong>. Top five: Team Lackey 143.20, Chuban Missles 124.88, Team Whitehead 114.22, Team Jensen 110.80, Cee Deez Nuts 109.02.</li>
+    <li><strong>Week 3</strong>: cut line 125.84. Sixth place (This Sucks) scored 102.84, a 23.00-point miss. Top five: Team Jensen 137.44, Team Lackey 136.74, Cee Deez Nuts 134.20, Chuban Missles 133.90, Team Stowell 125.84.</li>
+    <li><strong>Week 4</strong>: cut line 112.48. Sixth place (This Sucks) scored 110.26, a <strong>2.22-point miss</strong>. Top five: Chuban Missles 172.94, His Airdness 130.90, Team Carvalho 128.58, Team Carnahan 124.48, Team Jensen 112.48.</li>
+    <li><strong>Week 5</strong>: cut line 130.68. Sixth place (Team Carvalho) scored 128.04, a <strong>2.64-point miss</strong>. Top five: Team Carnahan 164.16, Cee Deez Nuts 154.62, Team Jensen 136.76, His Airdness 135.26, Team Lackey 130.68.</li>
+    <li><strong>Week 6</strong>: cut line 110.86. Sixth place (Team Carnahan) scored 110.60, a <strong>0.26-point miss</strong>. Top five: Team Carvalho 138.70, Team Jensen 123.46, Team Stowell 118.12, Team Lackey 114.24, Chuban Missles 110.86.</li>
+    <li><strong>Week 7</strong>: cut line 122.12. Sixth place (Team Lackey) scored 116.26, a 5.86-point miss. Top five: Team Whitehead 148.08, Chuban Missles 146.28, Team Stowell 123.78, Team Jensen 122.42, His Airdness 122.12.</li>
+    <li><strong>Week 8</strong>: cut line 107.96. Sixth place (His Airdness) scored 107.60, a <strong>0.36-point miss</strong>. Top five: Chuban Missles 187.18, Cee Deez Nuts 119.78, Team Carvalho 115.98, Team Stowell 113.30, Team Carnahan 107.96.</li>
+    <li><strong>Week 9</strong>: cut line 106.28. Sixth place (Team Carnahan) scored 102.66, a 3.62-point miss. Top five: Team Jensen 138.78, Team Lackey 134.98, Chuban Missles 134.52, Team Stowell 120.00, His Airdness 106.28.</li>
+    <li><strong>Week 10</strong> (2 pts each): cut line 130.36. Sixth place (This Sucks) scored 126.94, a 3.42-point miss. Top five: His Airdness 179.92, Team Carvalho 153.26, Team Stowell 140.42, Chuban Missles 135.96, Team Jensen 130.36.</li>
+  </ul>
+  <h3>What the table says</h3>
+  <p><strong>Week 10 was the first 2-point week, and the top five got richer.</strong> All five teams that cashed in (His Airdness, Carvalho, Stowell, Chuban Missles and Jensen) were already in the top six of the table. Nobody from 7th down gained ground, so the chasing pack (Lackey 10, Carnahan 8, Cee Deez Nuts 7, Whitehead 6) all fell 2 more points behind 5th place. Lackey had been tied with His Airdness and Stowell at 10.</p>
+  <p><strong>The cut line jumped to 130.36.</strong> That's the second-highest of the season (Week 5 was 130.68), up from a 112.48 median through Week 9. His Airdness put up 179.92, the second-best score of the season after Chuban Missles' 187.18 in Week 8. This Sucks scored 126.94, its best week of the year, and still finished 6th and missed by 3.42. Head-to-head results are now meaningless. Team Whitehead beat Lackey 99.70–88.90 and got nothing for it, while This Sucks lost and came within one big play of 2 points.</p>
+  <p><strong>Chuban Missles is the real favorite, not the leader.</strong> Jensen leads by 2 (17 to 15), but Chuban Missles has 1,379.48 points for, 129 more than Jensen and 158 more than anyone else, and it has made the top five in eight of ten weeks. Over a seven-week scoring race, raw points per week is what wins. Jensen's lead came partly from matchup wins (seven of them) that no longer pay.</p>
+  <p><strong>For everyone from 6th down, it's about ceiling, not floor.</strong> Fourteen points remain. Team Whitehead is 6 behind 4th and 5th (His Airdness and Stowell, both at 12), so three more top-five weeks than they get closes the gap. A steady 110 now finishes 6th or 7th most weeks and pays nothing. The lineup choice that matters is the one with the higher upside: two-way backs with goal-line work, and receivers who see deep targets, over safe 9-point floors.</p>
+
+  <h2>Waiver Report (Tuesday)</h2>
+  <p class="stamp">Generated Tuesday, November 17, 2026, about 2:30pm MT · all Week 10 games final · league data pulled live from the ESPN API · the whole pool (300 of 300 checked) is on waivers until claims process Wednesday, November 18, at about 1:00am MT · Week 11 starts Thursday with Indianapolis at Houston (6:15pm MT), so Jonathan Taylor plays Thursday</p>
+
+  <h3>The short version</h3>
+  <ol>
+    <li><strong>Get Tyson out of the IR slot. This is the third week in a row it's been flagged.</strong> <span class="tag hi">Required · high conviction</span> He's healthy (ACTIVE) and scored 19.0 in Week 10 from the IR slot, so none of it counted. With him there, ESPN rejects every add and claim. <strong>Drop Hunter Henry first, then move Tyson to the bench.</strong> Henry is on bye this week (New England) and is the TE2 behind a healthy Kittle.</li>
+    <li><strong>Claim Seth McGowan (RB, IND) for $13, dropping Keaton Mitchell.</strong> <span class="tag">Medium conviction</span> He's the other half of Jonathan Taylor's backfield now: 12 carries and the goal-line TD in Week 10. He's insurance on your RB1 for a 3–7 team that may limit Taylor down the stretch.</li>
+    <li><strong>Fix the Week 11 lineup.</strong> ESPN has KC Concepcion (Cleveland bye) in FLEX. Projected starters: Allen; Coleman and Taylor at RB; Flowers plus Waddle or Tyson at WR; Kittle; Barkley and Tyson or Odunze at FLEX. Thursday's check will finalize it, but Taylor's game is Thursday night.</li>
+    <li><strong>Keep the rest of the money (about $57).</strong> Nothing else in this pool helps a roster that is deep at RB and WR. Everything else worth having should be free on Wednesday morning.</li>
+  </ol>
+
+  <div class="alert">
+    <p><strong>Timing note:</strong> this page shows the bid. If it's shared before claims process (about 1:00am MT Wednesday), Team Jensen, which has $59 and paid $15 for both Tyreek Hill and Corey Kiner, could top $13 on purpose. Justin wins a tie against Jensen (10th in waiver priority), so a habitual $13 or less doesn't beat him, but a deliberate $14+ would.</p>
+  </div>
+
+  <h3>Where the roster stands</h3>
+  <p>Week 10: 99.70, 7th of ten, 30.66 short of the 130.36 cut line. It technically beat Lackey, but matchups no longer count. Tyson's 19.0 was wasted in the IR slot, and Rachaad White (6.2) started in his place. Swapping them would have made 112.5, still well short in a high-scoring week. Through ten weeks: <strong>6 points, 9th</strong>, with 1,055.46 points for (9th). Six points behind 4th/5th with 14 left to play for.</p>
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr><th>Player</th><th>Pos</th><th>Bye</th><th class="num">Wk 10</th><th class="num">Wk 11 proj</th><th>Status and outlook</th></tr></thead>
+    <tbody>
+      <tr><td>Josh Allen</td><td>QB</td><td>7</td><td class="num">22.3</td><td class="num">23.4</td><td>Vs. Miami, Sunday 11am.</td></tr>
+      <tr><td>Jonathan Taylor</td><td>RB</td><td>12</td><td class="num">12.3</td><td class="num">16.4</td><td><strong>Plays Thursday</strong> at Houston (6:15pm MT). No injury, but McGowan now takes about a quarter of the work and the goal-line carries. Bye next week.</td></tr>
+      <tr><td>Jonah Coleman</td><td>RB</td><td>10</td><td class="num">bye</td><td class="num">19.4</td><td>Denver's clear lead back (77% of snaps in Week 9). Vs. Las Vegas, Sunday 2:25pm. Start.</td></tr>
+      <tr><td>Saquon Barkley</td><td>RB</td><td>10</td><td class="num">bye</td><td class="num">12.0</td><td>Vs. Pittsburgh. Hurts (blood clot, IR since Oct. 17) is eligible and Week 11 has been reported as his target, so watch Wednesday's practice report. FLEX.</td></tr>
+      <tr><td>Rachaad White</td><td>RB</td><td>7</td><td class="num">6.2</td><td class="num">10.9</td><td>Washington hosts Cincinnati on <strong>Monday night</strong>. Low ceiling. Bench.</td></tr>
+      <tr><td>Keaton Mitchell</td><td>RB</td><td>7</td><td class="num">0.4</td><td class="num">6.9</td><td>0.4 points in Week 10. Third in the Chargers' committee. <strong>Drop for McGowan.</strong></td></tr>
+      <tr><td>Zay Flowers</td><td>WR</td><td>12</td><td class="num">11.4</td><td class="num">14.1</td><td>At Carolina. Bye next week.</td></tr>
+      <tr><td>Jaylen Waddle</td><td>WR</td><td>10</td><td class="num">bye</td><td class="num">12.5</td><td><span class="tag hi">Questionable</span> Concussion from Week 9. Expected to clear after the bye, but ESPN still lists him Q. Watch practice. Vs. Las Vegas, Sunday 2:25pm.</td></tr>
+      <tr><td>Jordyn Tyson</td><td>WR</td><td>8</td><td class="num">19.0*</td><td class="num">11.7</td><td>*Scored from the IR slot, so it didn't count. <strong>Move to the bench.</strong> At Chicago.</td></tr>
+      <tr><td>Rome Odunze</td><td>WR</td><td>10</td><td class="num">bye</td><td class="num">11.5</td><td>Vs. New Orleans.</td></tr>
+      <tr><td>Jameson Williams</td><td>WR</td><td>6</td><td class="num">9.0</td><td class="num">11.2</td><td>Vs. Tampa Bay.</td></tr>
+      <tr><td>Malik Washington</td><td>WR</td><td>6</td><td class="num">13.4</td><td class="num">7.7</td><td>At Buffalo. Depth. Worth keeping for Week 12, when Taylor and Flowers are both on bye.</td></tr>
+      <tr><td>KC Concepcion</td><td>WR</td><td>11</td><td class="num">11.7</td><td class="num">bye</td><td><strong>On bye and in your FLEX right now.</strong> Move him out.</td></tr>
+      <tr><td>George Kittle</td><td>TE</td><td>8</td><td class="num">13.4</td><td class="num">13.0</td><td>Vs. Minnesota, Sunday night. No bye left.</td></tr>
+      <tr><td>Hunter Henry</td><td>TE</td><td>11</td><td class="num">4.2</td><td class="num">bye</td><td>Under 7 points in three straight games, and on bye. <strong>Drop to free Tyson.</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>The ranked moves</h3>
+
+  <div class="move">
+    <h3>0. Required: drop Hunter Henry, then move Tyson from IR to the bench</h3>
+    <p class="line"><strong>Conviction: high</strong> · no FAAB · do it before claims process at 1:00am MT Wednesday</p>
+    <p>Tyson has been off injured reserve since Week 9 and has played two games, scoring 5.0 and 19.0. As long as an ACTIVE player sits in the IR slot, ESPN treats the roster as illegal and won't process a claim. This also cost you 19 points in Week 10, when Tyson outscored White by 12.8.</p>
+    <p><strong>Why Henry.</strong> He's on bye this week, he's scored under 7 points in three straight games, and Kittle has no bye left. If Kittle gets hurt, streamers like Michael Mayer (if Bowers stays out) and Chig Okonkwo are available for $0 in this league. Do the drop first: moving Tyson to the bench needs an open roster spot.</p>
+  </div>
+
+  <div class="move">
+    <h3>1. Add Seth McGowan (RB, IND) — bid $13 — drop Keaton Mitchell</h3>
+    <p class="line"><strong>Conviction: medium</strong> · about 11% rostered on ESPN · Yahoo's suggested bid: $7 · bye Week 12 (same as Taylor) · plays Thursday</p>
+    <p><strong>The role.</strong> The Colts kept Taylor at the deadline but didn't go back to giving him every carry. In Week 10, McGowan had 12 carries and the goal-line TD, his second straight game with a touchdown. NBC's Pelissero expects Taylor at about 70–75% of snaps from here. Yahoo's read is that a 3–7 team could shut Taylor down at the first minor injury. Either way, McGowan is the back who inherits the job, and right now he's taking goal-line work from <em>your</em> RB1.</p>
+    <p><strong>Why it fits this roster.</strong> In a top-five race, the worst case is losing Taylor and replacing him with White's 6-to-10-point floor. McGowan turns that into a starting back. Even with Taylor healthy he's a better bench back than Mitchell, who scored 0.4 in Week 10. He also gives you a handcuff that plays Thursday, so if Taylor is ruled out late, you'll know before the Sunday games.</p>
+    <p><strong>Who else bids.</strong> Carvalho dropped McGowan on Nov. 11 to add Kaleb Johnson, and then nobody took him as a free agent for four days, even before his Week 10 TD. That's real evidence of low demand.</p>
+    <ul>
+      <li><strong>Team Jensen ($59, waiver #10)</strong> is the only real threat. Kenneth Walker (groin) is questionable, Kiner and Stevenson projected 0 this week, and Jensen has paid $15 twice (Hill, Kiner). <strong>Justin wins a tie with Jensen</strong>, so $13 beats any Jensen bid of $13 or less, but loses to its usual $15. That risk is accepted rather than chased.</li>
+      <li><strong>His Airdness ($15, #4)</strong> has six RBs, including Montgomery and Emmett Johnson (35.1 in Week 10). Unlikely.</li>
+      <li><strong>Lackey ($100, #2)</strong> needs RB help (Henderson IR, Monangai Q) but has never placed a bid in eleven weeks.</li>
+      <li><strong>Stowell ($98, #3)</strong> and <strong>Carnahan ($74, #7)</strong> are deep at RB. Their top bids all season are $6 and $10.</li>
+    </ul>
+    <p><strong>Why $13, about double the national price.</strong> FAAB is worth nothing in Week 18. With seven weeks left and $70 in the bank, the cost of overpaying is small, and losing Taylor without the handcuff would hurt. Only a handful of winning bids this season have topped $13 (Allen $51, Montgomery $40, Allgeier $22, Marks $18, Gordon $17, and a few at $15). It still leaves $57 for a real injury replacement later. If you want to beat Jensen's habit outright, $16 does it, but that's paying for a backup.</p>
+    <p><strong>If it loses:</strong> nothing changes. Keep Mitchell, and don't chase other backs.</p>
+  </div>
+
+  <div class="move">
+    <h3>2. Hold Waddle, White and Malik Washington</h3>
+    <p class="line"><strong>Conviction: medium</strong> · no move</p>
+    <p>Week 12 takes Taylor and Flowers (IND and BAL byes), and that is when the depth is needed: Coleman, Barkley and White at RB, and Waddle, Odunze, Tyson, Williams, Concepcion and Washington at WR. Dropping any of them for a speculative add makes Week 12 worse. Waddle's concussion should clear after the bye. Don't sell low.</p>
+  </div>
+
+  <h3>Passing on</h3>
+  <ul>
+    <li><strong>Pat Bryant (DEN WR, 2%)</strong>: Yahoo's #2 add at $9, after 56 yards and the game-winning TD in Week 9. But his 68% snap share came after Waddle left with a concussion. If Waddle is cleared, Bryant is Denver's WR3. You don't need another receiver. He'll be free Wednesday if Waddle's status changes.</li>
+    <li><strong>Michael Mayer (LV TE, 18%)</strong> and <strong>Chig Okonkwo (WAS TE, 16%)</strong>: the best TE streamers this week (Bowers' ankle; Okonkwo's targets since McLaurin's injury). They're only relevant if Kittle gets hurt, and both should be free.</li>
+    <li><strong>Cam Ward (TEN QB)</strong>: a streamer. Allen has no bye left.</li>
+    <li><strong>Emari Demercado (HOU RB)</strong>: volume if Montgomery (groin) and Marks (concussion) both miss Thursday. A one-week play against your own RB1's opponent. No.</li>
+    <li><strong>Kaleb Johnson (GB RB)</strong>: available again after Carvalho dropped him. Green Bay is on bye this week and Jacobs could be back by Week 12.</li>
+  </ul>
+
+  <h3>Likely to pass waivers unclaimed (free Wednesday morning)</h3>
+  <p>In this league that's nearly everyone. Last week only two claims drew more than $2 (Kiner $15, Dell $10), and Kaleb Johnson, the #7 national add, went completely unclaimed. Expect these to be $0 free agents after claims process: <strong>Pat Bryant</strong>, Michael Mayer, Chig Okonkwo, Cam Ward, Emari Demercado, Kaleb Johnson, Xavier Hutchinson, Tre' Harris and Justice Hill. If you want one of them, add it early Wednesday. This league's free-agent pickups happen between about 6 and 10am the morning after claims.</p>
+
+  <h3>League FAAB and bidding read</h3>
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr><th>Team</th><th class="num">FAAB left</th><th class="num">Waiver #</th><th>Bidding habit / need this week</th></tr></thead>
+    <tbody>
+      <tr><td>Cee Deez Nuts</td><td class="num">$100</td><td class="num">1</td><td>One $4 bid all season. Cook, Brown, Warren at RB. No need.</td></tr>
+      <tr><td>Team Lackey</td><td class="num">$100</td><td class="num">2</td><td>Has never bid. Henderson (IR) and Monangai (Q) are out, Dowdle and Estime are the starters. Could bid on McGowan in theory.</td></tr>
+      <tr><td>Team Stowell</td><td class="num">$98</td><td class="num">3</td><td>Top bid $6. Deep at RB (McCaffrey, Etienne, Corum, Price, Black). A.J. Brown and Bowers are both Q.</td></tr>
+      <tr><td>His Airdness</td><td class="num">$15</td><td class="num">4</td><td>Bids $15 by habit. Six RBs. Traded for Tyler Shough (sent Denzel Boston to Chuban Missles, Nov. 14).</td></tr>
+      <tr><td>Team Whitehead</td><td class="num">$70</td><td class="num">5</td><td>—</td></tr>
+      <tr><td>Chuban Missles</td><td class="num">$69</td><td class="num">6</td><td>Paid $22 for Allgeier. Puka Nacua and Jeremiyah Love are both hurt, but it already has Derrick Henry, Pollard and Hubbard.</td></tr>
+      <tr><td>Team Carnahan</td><td class="num">$74</td><td class="num">7</td><td>Paid $10 for Tank Dell last week. Drake Maye is doubtful (ankle, possibly long-term) and Carnahan has no backup QB, so it's likely spending on a QB, not a RB.</td></tr>
+      <tr><td>Team Carvalho</td><td class="num">$30</td><td class="num">8</td><td>Dropped McGowan Nov. 11. Won't come back for him.</td></tr>
+      <tr><td>This Sucks</td><td class="num">$0</td><td class="num">9</td><td>Out of money. Can only place $0 bids.</td></tr>
+      <tr><td>Team Jensen</td><td class="num">$59</td><td class="num">10</td><td>Paid $15 for Hill and Kiner, $9 for Vele. Walker is Q. <strong>The McGowan threat</strong>, but last in waiver priority.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><strong>Last week's market:</strong> five claims processed Nov. 11. Jensen won Kiner for $15 and Sampson for $1, Carnahan won Tank Dell for $10, Carvalho won Josh Downs for $2, and This Sucks won Stroud for $1. No losing bids were recorded. Kaleb Johnson went unclaimed, Carvalho added him for $0 on Wednesday and dropped him the next day. Team Whitehead placed no claims (the IR slot would have blocked them anyway). League spending is $385 of $1,000. Most teams keep holding money they're unlikely to use. Lackey and Cee Deez Nuts have $200 between them and one bid all season.</p>
+
+  <h3>Sources</h3>
+  <ul>
+    <li><a href="https://sports.yahoo.com/fantasy/article/week-11-fantasy-football-waiver-wire-pickups-kaelon-black-among-top-adds-with-6-teams-on-bye-rash-of-injuries-152122668.html">Yahoo: Week 11 waiver wire pickups (FAB suggestions and injury notes)</a></li>
+    <li><a href="https://sports.yahoo.com/articles/fantasy-football-top-10-waiver-173833238.html">Yahoo/ClutchPoints: Top 10 waiver pickups for Week 11 (2026)</a></li>
+    <li><a href="https://www.nbcsports.com/fantasy/football/player-news/2026-11-10/pelissero-colts-keeping-jonathan-taylor">NBC Sports: Pelissero, Colts keeping Jonathan Taylor</a>; <a href="https://sports.yahoo.com/articles/why-seth-mcgowan-running-colts-220244943.html">Yahoo/Heavy: why McGowan is running for the Colts</a>; <a href="https://www.washingtontimes.com/news/2026/nov/17/jonathan-taylor-seth-mcgown-embracing-roles-part-colts-new-running/">AP via Washington Times: Taylor and McGowan time-share</a></li>
+    <li><a href="https://www.cbssports.com/fantasy/football/news/broncos-pat-bryant-makes-impact-in-return-to-action/">CBS: Pat Bryant returns from IR</a>; <a href="https://www.si.com/nfl/broncos/onsi/what-jonah-coleman-increased-playing-time-reveals-about-broncos-plans">SI: Jonah Coleman's playing time</a></li>
+    <li><a href="https://www.clickondetroit.com/sports/2026/10/17/eagles-qb-jalen-hurts-placed-on-injured-reserve-with-blood-clot-in-his-calf/">AP: Jalen Hurts placed on IR (Oct. 17)</a></li>
+    <li>League data, transactions, waiver order, FAAB, Week 11 projections and kickoff times: ESPN Fantasy API, pulled Nov. 17, 2026, 2:00pm MT</li>
+  </ul>
+
+</div>
+</body>
+</html>
